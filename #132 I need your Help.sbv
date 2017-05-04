@@ -1,0 +1,221 @@
+0:00:00.599,0:00:04.380
+Hello YouTubers, here is the guy with the
+Swiss accent.
+
+0:00:04.380,0:00:09.350
+Currently, I have viewers from 147 countries.
+
+0:00:09.350,0:00:11.170
+This is great!
+
+0:00:11.170,0:00:16.540
+But many additional people would like to watch
+my videos but do not understand enough English
+
+0:00:16.540,0:00:19.940
+to follow the rather complex stuff.
+
+0:00:19.940,0:00:26.360
+And from time to time, I even had requests
+for making my videos in another language,
+
+0:00:26.360,0:00:30.210
+or at least, add subtitles in other languages.
+
+0:00:30.210,0:00:38.420
+So, I decided to start this experiment: But,
+to achieve this, I need your help!
+
+0:00:38.420,0:00:45.190
+I am searching for a programmer to program
+a small tool, and a few guys who want to support
+
+0:00:45.190,0:00:50.149
+me by creating subtitles in their native languages.
+
+0:00:50.149,0:00:57.050
+YouTube has a functionality where the community
+can translate the description of videos and
+
+0:00:57.050,0:00:59.329
+create subtitles.
+
+0:00:59.329,0:01:00.709
+This is a great feature.
+
+0:01:00.709,0:01:06.820
+But, of course, it is a lot of work to add
+such comments or subtitles.
+
+0:01:06.820,0:01:12.479
+If you go into the “more” tab below a
+video, you find “translations”.
+
+0:01:12.479,0:01:21.009
+There, you can add either title and description,
+or subtitles in your language.
+
+0:01:21.009,0:01:27.210
+Just chose the language and then, upload your
+file with the translated text and the respective
+
+0:01:27.210,0:01:30.780
+times when the subtitles have to appear.
+
+0:01:30.780,0:01:35.450
+Then, you can watch the video and adjust the
+times if necessary.
+
+0:01:35.450,0:01:42.729
+At the end, you can submit it, either to the
+community, or to me for approval.
+
+0:01:42.729,0:01:44.749
+This is not too complicated.
+
+0:01:44.749,0:01:49.909
+But, where does the file for the uploading
+come from?
+
+0:01:49.909,0:01:57.061
+To support you as much as possible, I have
+the following proposal: As you know, I use
+
+0:01:57.061,0:02:00.030
+a script for most of my videos.
+
+0:02:00.030,0:02:05.479
+The only exceptions are Mailbags and semi-live
+videos.
+
+0:02:05.479,0:02:10.780
+If you are willing to help, I will send you
+the respective script file and you can translate
+
+0:02:10.780,0:02:13.400
+it to your language.
+
+0:02:13.400,0:02:17.670
+Maybe it is even worthwhile to start with
+Google translate.
+
+0:02:17.670,0:02:23.200
+I know, this is a big work, and this cannot
+be done by me, because I do not speak your
+
+0:02:23.200,0:02:24.790
+language.
+
+0:02:24.790,0:02:31.310
+But it adds a lot of value for other people
+in your country, or even around the world.
+
+0:02:31.310,0:02:38.010
+To support this process, I wrote an Excel
+macro which reads your translated text file,
+
+0:02:38.010,0:02:45.690
+divides it into small junks, inserts all the
+needed times, and creates a subtitles file
+
+0:02:45.690,0:02:47.790
+which can be uploaded YouTube.
+
+0:02:47.790,0:02:54.840
+Of course, the times are not always completely
+right, because I just divide the length of
+
+0:02:54.840,0:02:58.930
+the whole video by the number of subtitles.
+
+0:02:58.930,0:03:03.250
+But I tested it, and it was not too bad for
+a start.
+
+0:03:03.250,0:03:07.460
+And you still have the chance to adjust it
+as shown before.
+
+0:03:07.460,0:03:12.230
+We all know, that Excel macros are not ideal
+to format text.
+
+0:03:12.230,0:03:19.310
+So, I search also a programmer which uses
+the ideas in the Excel macro and writes a
+
+0:03:19.310,0:03:21.120
+decent program.
+
+0:03:21.120,0:03:26.290
+It should be able to ask for the number of
+letters per subtitle, the file name of the
+
+0:03:26.290,0:03:32.350
+source and destination file, the length of
+the video and then, read your translated file
+
+0:03:32.350,0:03:38.000
+and outputs an SBV file which can be uploaded
+to YouTube.
+
+0:03:38.000,0:03:41.120
+The program should be easy to use.
+
+0:03:41.120,0:03:44.680
+I do not care about the language it is written
+in.
+
+0:03:44.680,0:03:47.970
+And what do you get for all this work?
+
+0:03:47.970,0:03:50.490
+Of course, I cannot pay you.
+
+0:03:50.490,0:03:57.820
+But I thought, I would create a page for each
+one of you on my blog with a picture, a text,
+
+0:03:57.820,0:04:01.000
+and the episodes you translated.
+
+0:04:01.000,0:04:05.980
+Of course, only, if you want to disclose your
+identity.
+
+0:04:05.980,0:04:10.500
+And maybe, it is a way to give a something
+back to the community.
+
+0:04:10.500,0:04:15.730
+BTW, this was my primary reason to start this
+channel…
+
+0:04:15.730,0:04:21.570
+If you are interested to try it out, please
+drop me a message here on YouTube, on Twitter,
+
+0:04:21.570,0:04:22.790
+or Facebook.
+
+0:04:22.790,0:04:28.160
+And tell me, with which episode you would
+like to start and in which language you would
+
+0:04:28.160,0:04:30.070
+like to translate.
+
+0:04:30.070,0:04:33.990
+Here is the list of the most successful episodes.
+
+0:04:33.990,0:04:38.490
+Maybe it would be a good idea if we start
+with these.
+
+0:04:38.490,0:04:44.810
+I hope, I will get a response from a few of
+you and we can start our experiment.
+
+0:04:44.810,0:04:47.820
+Thank you very much!
+
