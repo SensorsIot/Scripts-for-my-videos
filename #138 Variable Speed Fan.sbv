@@ -1,0 +1,578 @@
+0:00:00.530,0:00:01.920
+Grüzi YouTubers.
+
+0:00:01.920,0:00:04.800
+Here is the guy with the Swiss accent.
+
+0:00:04.800,0:00:09.580
+With a new episode around sensors and microcontrollers.
+
+0:00:09.580,0:00:14.039
+In video #131 we pimped our Raspi.
+
+0:00:14.039,0:00:21.010
+One of the new features was a cooling fan
+which switched automatically on if CPU temperature
+
+0:00:21.010,0:00:22.510
+was too high.
+
+0:00:22.510,0:00:28.000
+Viewers suggested to make the speed of the
+fan variable.
+
+0:00:28.000,0:00:31.170
+And this is, what we will do today.
+
+0:00:31.170,0:00:38.351
+We also will learn a few things about Pulse
+Width Modulation, PID controllers, MOSFET
+
+0:00:38.351,0:00:41.960
+transistors, and even a little of magic.
+
+0:00:41.960,0:00:50.480
+So, let’s start: in video #131 I used a
+simple concept: A MOSFET transistor to switch
+
+0:00:50.480,0:00:57.510
+the fan on and off and a Python program which
+measures the CPU temperature and switched
+
+0:00:57.510,0:00:59.100
+the MOSFET on, when the temperature was too
+high.
+
+0:00:59.100,0:01:00.379
+Very simple.
+
+0:01:00.379,0:01:07.520
+I used a beefy IRLZ44N transistor, because
+it is logic level.
+
+0:01:07.520,0:01:16.590
+In video #137 I showed, that these FETs switch
+on at a voltage of below 2.5 volt.
+
+0:01:16.590,0:01:22.399
+This is, why they are ideal for microprocessors
+with 3.3 volt logic.
+
+0:01:22.399,0:01:30.420
+First, let’s do some tests on the breadboard:
+I used the same diagram as in the last video
+
+0:01:30.420,0:01:36.829
+and we see, that the fan starts to run full
+speed if we connect the gate of the transistor
+
+0:01:36.829,0:01:44.150
+to 3.3 volt and it is switches off if we connect
+the gate to ground.
+
+0:01:44.150,0:01:49.759
+I connect now a button between 3.3 volt and
+the gate to switch the voltage.
+
+0:01:49.759,0:01:54.289
+As soon as I push the switch, the fan starts
+to run.
+
+0:01:54.289,0:02:00.450
+Unfortunately, the fan continues to run even
+if I open the switch.
+
+0:02:00.450,0:02:01.790
+Not what we expected.
+
+0:02:01.790,0:02:02.790
+Right?
+
+0:02:02.790,0:02:08.410
+So, lets measure the gate voltage to check,
+if I made a wiring mistake.
+
+0:02:08.410,0:02:13.900
+If we look at the oscilloscope, we see, that
+the gate voltage is zero volts.
+
+0:02:13.900,0:02:20.790
+But we also see, that, as soon as I connected
+the probe, the fan stopped.
+
+0:02:20.790,0:02:21.790
+Magic?
+
+0:02:21.790,0:02:24.650
+Let’s try again.
+
+0:02:24.650,0:02:30.650
+And this time, I leave the probe connected,
+because we want to «see» the truth.
+
+0:02:30.650,0:02:35.920
+The voltage really switches between zero and
+3.3 volt.
+
+0:02:35.920,0:02:41.950
+But the fan now behaves differently: It does
+exactly, what we want.
+
+0:02:41.950,0:02:44.370
+It switches on and off.
+
+0:02:44.370,0:02:45.610
+Great.
+
+0:02:45.610,0:02:47.470
+But what happened?
+
+0:02:47.470,0:02:50.770
+The explanation is somehow hidden.
+
+0:02:50.770,0:02:59.940
+But we get a clue, if we look very close to
+this curve: The signal is not a clean rectangle:
+
+0:02:59.940,0:03:06.909
+When we open the contact, it does not go immediately
+to zero, it has a curve, which is typical
+
+0:03:06.909,0:03:09.580
+for the discharge of a capacitor.
+
+0:03:09.580,0:03:12.860
+Maybe, there is somewhere a capacitor?
+
+0:03:12.860,0:03:18.720
+Yes, there is a capacitor between the gate
+of a MOSFET and ground.
+
+0:03:18.720,0:03:25.700
+And if we leave the gate open, this capacitor
+stays charged, the gate voltage stays high,
+
+0:03:25.700,0:03:28.409
+and the transistor stays on.
+
+0:03:28.409,0:03:31.890
+What happened when I connected the probe?
+
+0:03:31.890,0:03:36.170
+Each probe of an oscilloscope has an input
+resistance.
+
+0:03:36.170,0:03:43.000
+As soon as I connected the probe to the gate,
+this capacitor was discharged and the transistor
+
+0:03:43.000,0:03:44.110
+switched off.
+
+0:03:44.110,0:03:51.379
+BTW: This behavior is completely different
+compared with a bipolar NPN transistor and
+
+0:03:51.379,0:03:54.769
+is typical for a FET.
+
+0:03:54.769,0:04:01.920
+To prove my point, I replace the FET transistor
+with a 1 nF capacitor.
+
+0:04:01.920,0:04:05.299
+And you see, its behavior is very similar.
+
+0:04:05.299,0:04:09.129
+Of course, it does not switch the fan…
+
+0:04:09.129,0:04:14.579
+And if we have a look into the data sheet
+of the transistor, we find the value of this
+
+0:04:14.579,0:04:15.989
+capacitance, too.
+
+0:04:15.989,0:04:23.979
+So, best practice is to connect a resistor
+between gate and ground, in parallel to the
+
+0:04:23.979,0:04:24.979
+capacitance.
+
+0:04:24.979,0:04:29.690
+In our case, the Raspi GPIO has a quite low
+resistance.
+
+0:04:29.690,0:04:37.250
+So, this resistor is already “built-in”
+and we do not need to add an additional one.
+
+0:04:37.250,0:04:41.790
+For the next step, we have to know the maximum
+speed of the fan.
+
+0:04:41.790,0:04:46.650
+It is about 7800 RPM at 5 volt.
+
+0:04:46.650,0:04:50.660
+As we saw, I can switch the fan on and off.
+
+0:04:50.660,0:04:56.880
+If I do this fast, then the fan cannot get
+to its full speed anymore.
+
+0:04:56.880,0:05:00.990
+And it does not have time to stop completely.
+
+0:05:00.990,0:05:06.990
+Some of you know, that I still know the Morse
+code, but this switching is too exhausting
+
+0:05:06.990,0:05:08.360
+even for me.
+
+0:05:08.360,0:05:14.419
+So, I replace my finger and connect a waveform
+generator to the gate.
+
+0:05:14.419,0:05:19.819
+It switches the voltage every 0.5 seconds
+on and off.
+
+0:05:19.819,0:05:21.569
+What happens?
+
+0:05:21.569,0:05:28.070
+The RPM starts to fluctuate and the meter
+shows around 4000 RPM.
+
+0:05:28.070,0:05:35.889
+If I reduce the percentage of the on-time
+to 20%, the fan has the time to go to a complete
+
+0:05:35.889,0:05:43.470
+stop and the meter shows around 1000 RPM,
+obviously with a lot of fluctuation.
+
+0:05:43.470,0:05:48.560
+It is easy to reduce this fluctuation: We
+just increase the switching frequency of the
+
+0:05:48.560,0:05:52.410
+signal to let’s say 10 Hz.
+
+0:05:52.410,0:05:59.680
+Now, there is no more fluctuation and the
+meter shows a more or less constant 1000 RPM.
+
+0:05:59.680,0:06:07.900
+If I increase the duty cycle to 50% again,
+we get 4000 RPM, which is around 50% of the
+
+0:06:07.900,0:06:10.780
+maximum 7800 RPM.
+
+0:06:10.780,0:06:13.100
+Very good.
+
+0:06:13.100,0:06:17.770
+With this system, we obviously can vary the
+speed of the fan.
+
+0:06:17.770,0:06:23.000
+And we can use a digital 3.3 volt signal to
+do so.
+
+0:06:23.000,0:06:27.620
+Which fit’s exactly the possibilities of
+our Raspi.
+
+0:06:27.620,0:06:32.740
+If we increase the frequency even more, nothing
+special happens.
+
+0:06:32.740,0:06:38.169
+Only if we zoom in to the edge of the curve,
+we see, that the voltage goes higher than
+
+0:06:38.169,0:06:40.000
+5 volt.
+
+0:06:40.000,0:06:45.389
+In our situation, this is not dangerous, because
+our MOSFET can handle that.
+
+0:06:45.389,0:06:52.819
+But in other situations, where we switch coils,
+this voltage can get much higher, and can
+
+0:06:52.819,0:06:55.090
+even destroy the transistor.
+
+0:06:55.090,0:07:02.130
+Fortunately, there is a simple trick available:
+We connect a diode, preferably a fast Schottky
+
+0:07:02.130,0:07:08.110
+type, in parallel to the coil (or in our case,
+fan).
+
+0:07:08.110,0:07:11.470
+And now, this overshooting is gone.
+
+0:07:11.470,0:07:18.910
+Another thing I have to mention if we drive
+MOSFETs with PWM signals: Charging and discharging
+
+0:07:18.910,0:07:23.160
+the gate capacitor draws current from the
+driving pin.
+
+0:07:23.160,0:07:29.100
+The higher the frequency, the higher the average
+current, because a capacitor behaves like
+
+0:07:29.100,0:07:32.569
+a short circuit at high frequencies.
+
+0:07:32.569,0:07:38.990
+This is, why you have to add a protection
+resistor between the GPIO and the gate.
+
+0:07:38.990,0:07:41.390
+This resistor limits the current.
+
+0:07:41.390,0:07:44.599
+Today, we only use very low frequencies.
+
+0:07:44.599,0:07:50.539
+So, this is not too dangerous for our Raspi
+and I did not implement one.
+
+0:07:50.539,0:07:52.930
+Now, our hardware is ready.
+
+0:07:52.930,0:07:55.820
+Let’s go to the software.
+
+0:07:55.820,0:08:02.840
+In video #131 we already had a software which
+started automatically at boot-up, reads the
+
+0:08:02.840,0:08:05.349
+temperature, and switches the fan.
+
+0:08:05.349,0:08:09.880
+So, we use exactly this software and add a
+few lines.
+
+0:08:09.880,0:08:14.909
+First, we have to be able to generate a pulsed
+signal.
+
+0:08:14.909,0:08:20.670
+This is also called PWM, or pulse width modulated
+signal.
+
+0:08:20.670,0:08:27.949
+Fortunately, the Raspis can create such a
+signal at their GPIO pins.
+
+0:08:27.949,0:08:32.020
+We use Python for our program to control the
+fan.
+
+0:08:32.020,0:08:36.320
+In Python, the command to enable PWM on a
+pin is:
+
+0:08:36.320,0:08:44.540
+myPWM=GPIO.PWM(fanPin,50) where fanPin is
+the pin number, and 50 is the frequency.
+
+0:08:44.540,0:08:48.840
+As we found out, the frequency is not so important
+for our application.
+
+0:08:48.840,0:08:51.630
+That’s why I choose 50 Hertz.
+
+0:08:51.630,0:08:59.970
+Now, we can start the pin with the command
+myPWM.start(50), where 50 is the duty cycle.
+
+0:08:59.970,0:09:06.180
+If we later want to change the duty cycle,
+we have to use the command myPWM.ChangeDutyCycle(fanSpeed),
+
+0:09:06.180,0:09:11.170
+where, fanSpeed is the variable for the duty
+cycle.
+
+0:09:11.170,0:09:15.790
+Now we have nearly everything necessary to
+fulfill our task.
+
+0:09:15.790,0:09:21.400
+The only missing part is how to determine
+how fast the fan should run.
+
+0:09:21.400,0:09:26.300
+Let’s assume, we want a stable temperature
+of 45 degrees.
+
+0:09:26.300,0:09:30.970
+Then, we could measure the actual temperature
+and calculate the difference.
+
+0:09:30.970,0:09:34.050
+Let’s assume, we measure 55 degrees.
+
+0:09:34.050,0:09:42.700
+Then, the difference is 10 degrees, and let’s
+assume, we want full speed at this temperature.
+
+0:09:42.700,0:09:50.700
+Then, we would have the following formula:
+fanSpeed (in %) = 10 * (actualTemp – desiredTemp)
+
+0:09:50.700,0:09:56.890
+Now, let’s assume the temperature difference
+gets smaller and smaller.
+
+0:09:56.890,0:10:01.310
+Then, the speed of the fan gets smaller and
+smaller.
+
+0:10:01.310,0:10:08.310
+But unfortunately, the temperature will never
+exactly reach the 45 degrees, also, because
+
+0:10:08.310,0:10:12.530
+the fan will stop at about 10% duty cycle.
+
+0:10:12.530,0:10:18.490
+This regulator is called p regulator because
+it is proportional.
+
+0:10:18.490,0:10:26.370
+If we want to get a more precise control,
+we have to add an I part, an integration part.
+
+0:10:26.370,0:10:33.200
+To achieve this, we sum up all differences
+between the desired and the actual temperature.
+
+0:10:33.200,0:10:40.580
+If our fan stops at let’s say 46 degrees,
+and we add the differences every second, this
+
+0:10:40.580,0:10:47.930
+value adds up quickly and the fan starts to
+run, even with this small temperature difference.
+
+0:10:47.930,0:10:53.620
+This is, why I also implemented an I part
+in my program.
+
+0:10:53.620,0:10:59.290
+If you watch my video #28, you see the term
+“PID controller”.
+
+0:10:59.290,0:11:05.800
+So, there is one letter missing: The D or
+differential part.
+
+0:11:05.800,0:11:10.420
+This part is used to get a faster reaction.
+
+0:11:10.420,0:11:15.100
+This is important for self-balancing systems,
+for example.
+
+0:11:15.100,0:11:19.510
+With our fan, speed of regulation is not so
+important.
+
+0:11:19.510,0:11:22.740
+This is, why I did not implement a D part.
+
+0:11:22.740,0:11:27.500
+So, our controller is only called “PI controller”.
+
+0:11:27.500,0:11:35.330
+Guys, who followed the instructions from video
+#131 and already have a fan implemented just
+
+0:11:35.330,0:11:38.300
+need to get the improved program.
+
+0:11:38.300,0:11:44.610
+All the others have to watch video #131 and
+follow the instructions there.
+
+0:11:44.610,0:11:48.360
+Finally, we check, if everything works.
+
+0:11:48.360,0:11:55.810
+To do that, I switch the program off and the
+CPU temperature rises to 65 degrees.
+
+0:11:55.810,0:12:02.880
+As soon as we start the program, the fan starts
+to run with 100% speed.
+
+0:12:02.880,0:12:09.520
+The temperature starts to decrease, and the
+fan also decreases its speed till we reach
+
+0:12:09.520,0:12:11.050
+45 degrees.
+
+0:12:11.050,0:12:17.730
+Then, the temperature oscillates around our
+desired temperature, and the fan needs only
+
+0:12:17.730,0:12:24.400
+30 to 40% of its power to keep the temperature
+at this CPU load.
+
+0:12:24.400,0:12:28.950
+It would immediately adapt its power if the
+CPU load would change.
+
+0:12:28.950,0:12:34.680
+So, we now have a quiet fan and a reasonable
+CPU temperature.
+
+0:12:34.680,0:12:37.530
+I think, this is really “cool”.
+
+0:12:37.530,0:12:45.760
+So, summarized, we know now how to use PWM
+on a Raspi and we also know how to properly
+
+0:12:45.760,0:12:48.700
+drive a Mosfet transistor.
+
+0:12:48.700,0:12:52.920
+And we programmed a simple PI controller.
+
+0:12:52.920,0:12:58.370
+Fortunately, there was no Magic, just a lack
+of understanding.
+
+0:12:58.370,0:13:03.680
+As it is quite often in life
+I hope, this video was useful or at least
+
+0:13:03.680,0:13:04.750
+interesting for you.
+
+0:13:04.750,0:13:05.750
+If true then like.
+
+0:13:05.750,0:13:05.751
+Bye
+
