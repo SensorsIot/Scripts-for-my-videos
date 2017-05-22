@@ -1,0 +1,278 @@
+0:00:04.779,0:00:08.920
+In video #106 I introduced the Wemos shields.
+
+0:00:08.920,0:00:16.420
+I like this concept a lot and there are even
+a few apps in iotappstory.com for this system.
+
+0:00:16.420,0:00:22.600
+I also used these shields for an introduction
+workshop in our local community.
+
+0:00:22.600,0:00:29.529
+It worked quite well, because each participant
+was able to build different devices like clocks
+
+0:00:29.529,0:00:33.160
+or temperature sensors without soldering.
+
+0:00:33.160,0:00:42.739
+Last week, I got two new Wemos boards: The
+Wemos Di mini with the new ESP-12S module
+
+0:00:42.739,0:00:49.289
+and a completely new D1 mini lite with a ESP8285
+chip.
+
+0:00:49.289,0:00:53.339
+So, I thought, I will do a short review of
+the two.
+
+0:00:53.339,0:00:59.809
+Let’s start with the D1 mini with the ESP-12S
+chip.
+
+0:00:59.809,0:01:03.510
+This board has the same functionality as the
+old one.
+
+0:01:03.510,0:01:05.880
+It has now version 2.2.0.
+
+0:01:05.880,0:01:15.590
+It no more uses the ESP-12E module, it uses
+the new ESP-12S module.
+
+0:01:15.590,0:01:21.759
+If we compare the two modules, the only difference
+is, that it has less pins.
+
+0:01:21.759,0:01:25.890
+The pins opposite of the antenna are gone.
+
+0:01:25.890,0:01:32.539
+Most of us were anyway never able to use these
+pins, and if you designed PCBs, they just
+
+0:01:32.539,0:01:35.090
+reduced your possibilities for routing.
+
+0:01:35.090,0:01:39.329
+So, this is a good thing if you build your
+own PCB.
+
+0:01:39.329,0:01:42.439
+For the rest of us, there is no difference.
+
+0:01:42.439,0:01:49.560
+If we turn the module, we see, that the CH340
+chip is in a different position, and that
+
+0:01:49.560,0:01:53.270
+they replaced the two transistors by a IC.
+
+0:01:53.270,0:01:55.000
+The LDO is still the same.
+
+0:01:55.000,0:01:58.219
+So, also here, nothing special.
+
+0:01:58.219,0:02:01.869
+I still do not like that they do not have
+a “flash” button.
+
+0:02:01.869,0:02:08.320
+I think, they could have used the space saved
+by the IC to add such a button.
+
+0:02:08.320,0:02:15.340
+But it is as it is and we have to add a button
+shield including a capacitor if we need it.
+
+0:02:15.340,0:02:21.010
+All-in-all this is probably an optimization
+of manufacturing cost without effect on us
+
+0:02:21.010,0:02:22.010
+users.
+
+0:02:22.010,0:02:27.579
+So, you still can buy or use your “old”
+ESP-12 modules.
+
+0:02:27.579,0:02:31.060
+The other module, however, is completely new.
+
+0:02:31.060,0:02:36.640
+It is called “lite”, because it has only
+1 MB flash memory.
+
+0:02:36.640,0:02:41.830
+The rest of the specs seem to be the same
+as the normal D1 mini board.
+
+0:02:41.830,0:02:47.201
+The build of the board, however, is completely
+different: It has no metallic shielding, and
+
+0:02:47.201,0:02:51.410
+I think also, no FCC certification.
+
+0:02:51.410,0:02:59.879
+And it has a different chip: Instead of our
+beloved ESP8266 it has its small sister, the
+
+0:02:59.879,0:03:05.459
+ESP8285, which already has 1 MB flash on board.
+
+0:03:05.459,0:03:13.140
+And it is a dollar cheaper than the normal
+D1 mini, at least in the Wemos store on Aliexpress.
+
+0:03:13.140,0:03:18.610
+And here, I buy the original, because I think,
+Wemos deserves it.
+
+0:03:18.610,0:03:23.540
+So, if you want to save a dollar, you can
+buy the lite version.
+
+0:03:23.540,0:03:29.120
+What is the disadvantage to do without the
+3M additional flash memory?
+
+0:03:29.120,0:03:35.799
+If you use the Arduino IDE, you anyway never
+get more than 1 MB for your sketch.
+
+0:03:35.799,0:03:38.790
+The rest is reserved for SPIFFS.
+
+0:03:38.790,0:03:45.849
+If you do not use SPIFFS, you lose only 64kb
+with the ESP8285.
+
+0:03:45.849,0:03:50.500
+Which is not a lot and most of us will never
+have any problems.
+
+0:03:50.500,0:03:56.970
+The next disadvantage is, that you have to
+add the board descriptions to your board.txt
+
+0:03:56.970,0:03:58.290
+file.
+
+0:03:58.290,0:04:01.170
+If you know how, this is easily done.
+
+0:04:01.170,0:04:07.360
+You go to the preferences menu of your Arduino
+IDE and click on the “preferences.txt”
+
+0:04:07.360,0:04:09.300
+link.
+
+0:04:09.300,0:04:21.260
+From there, you go 
+to packagesESP8266hardwareesp82662.3.0
+
+0:04:21.260,0:04:23.910
+or -rc2.
+
+0:04:23.910,0:04:33.290
+Here, you either replace the boards.txt file
+with the file from Github, or you add the
+
+0:04:33.290,0:04:39.870
+boards definitions from the Wemos forum at
+the end of the boards.txt file.
+
+0:04:39.870,0:04:42.340
+Save it and restart the IDE.
+
+0:04:42.340,0:04:46.540
+Now, you can choose the d1 mini lite options.
+
+0:04:46.540,0:04:51.870
+This has to be done only once and you find
+the links in the description.
+
+0:04:51.870,0:04:57.930
+For guys like me who develop for the Sonoff
+devices, there is another small advantage:
+
+0:04:57.930,0:05:05.020
+Because the Sonoffs also have 1 MB flash,
+we can use this board to develop our sketches.
+
+0:05:05.020,0:05:12.090
+I even built a small “Sonoff simulator”
+with the typical green LED, a white LED instead
+
+0:05:12.090,0:05:14.210
+of the relay, and a button.
+
+0:05:14.210,0:05:21.110
+With this, I can exactly simulate my Sonoff
+switch without the hassle to always take a
+
+0:05:21.110,0:05:22.259
+switch apart…
+
+0:05:22.259,0:05:30.120
+And of course, if you want to develop a sketch
+for this tiny ESP8285 board, this is the perfect
+
+0:05:30.120,0:05:31.169
+platform.
+
+0:05:31.169,0:05:34.300
+So, summarized:
+1.
+
+0:05:34.300,0:05:39.020
+The new Wemos D1 mini is mainly an internal
+optimization with no effects on the user
+
+0:05:39.020,0:05:40.039
+2.
+
+0:05:40.039,0:05:48.110
+The ESP-12S module has less pins and advantages
+for people which design their own PCBs.
+
+0:05:48.110,0:05:50.710
+For the rest of us, there is no difference.
+
+0:05:50.710,0:05:51.710
+3.
+
+0:05:51.710,0:05:56.720
+The Wemos D1 mini lite is quite different
+from the normal D1 mini.
+
+0:05:56.720,0:06:02.890
+It uses an ESP8285 chip and has only 1M flash.
+
+0:06:02.890,0:06:09.110
+It is about 1$ cheaper, and it can be used
+to replace the normal D1 mini in most of the
+
+0:06:09.110,0:06:10.710
+situations
+4.
+
+0:06:10.710,0:06:19.360
+It is an ideal development platform for ESP8285
+boards and, together with as simulator, a
+
+0:06:19.360,0:06:22.289
+development platform for the Sonoff switches.
+
+0:06:22.289,0:06:26.259
+I hope, this video was useful or at least
+interesting for you.
+
+0:06:26.259,0:06:26.759
+Bye

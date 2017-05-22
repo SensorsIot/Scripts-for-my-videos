@@ -1,0 +1,731 @@
+0:00:04.890,0:00:14.270
+In video #40, I compared ultrasonic distance
+sensors, and in video #97 I compared PIR sensors.
+
+0:00:14.270,0:00:20.390
+Both can be used to detect movement, and both
+use different physical principles.
+
+0:00:20.390,0:00:26.499
+Today we will have a look at a new kid in
+the block: Radar sensors.
+
+0:00:26.499,0:00:31.289
+This is one of the strangest devices which
+came across my desk.
+
+0:00:31.289,0:00:33.970
+Small and some of them, dirt cheap.
+
+0:00:33.970,0:00:38.210
+So, let’s explore, if they are also useful.
+
+0:00:38.210,0:00:43.670
+The invention of radar influenced the way
+world war two went, because it was possible
+
+0:00:43.670,0:00:48.210
+to detect planes of the enemy and shoot them
+down.
+
+0:00:48.210,0:00:53.989
+And since then, this technology made civil
+aviation as we know it possible, because it
+
+0:00:53.989,0:00:58.780
+can detect movement of metallic surfaces over
+distance.
+
+0:00:58.780,0:01:05.239
+Of course, the technology can also be used
+against us, for example if we are trapped
+
+0:01:05.239,0:01:06.239
+while speeding…
+
+0:01:06.239,0:01:12.530
+Till a few month ago, radar devices were quite
+big and quite expensive.
+
+0:01:12.530,0:01:19.450
+This is, because they work on high frequencies,
+and need a strong sender and a big antenna.
+
+0:01:19.450,0:01:24.280
+This antenna sends a signal, usually only
+in one direction.
+
+0:01:24.280,0:01:27.869
+In parallel, a receiver listens on the same
+frequency.
+
+0:01:27.869,0:01:34.310
+If the signal hits a metallic surface, it
+is reflected back to the receiver.
+
+0:01:34.310,0:01:41.439
+And if the surface moves, the reflected frequency
+is slightly different than the one sent out.
+
+0:01:41.439,0:01:47.560
+This difference is proportional to the speed
+of the surface and the effect is called “doppler
+
+0:01:47.560,0:01:48.560
+effect”.
+
+0:01:48.560,0:01:55.619
+We all know this effect from police cars which
+pass by and sound different if they move towards
+
+0:01:55.619,0:01:56.979
+or away from us.
+
+0:01:56.979,0:02:01.049
+So, the parts we need to build a radar are:
+1.
+
+0:02:01.049,0:02:02.170
+An antenna
+2.
+
+0:02:02.170,0:02:03.530
+A sender
+3.
+
+0:02:03.530,0:02:05.320
+A receiver
+4.
+
+0:02:05.320,0:02:09.080
+A Mixer to bring the signal to low frequency
+5.
+
+0:02:09.080,0:02:15.070
+And a system for analysis
+And now came these small devices which are
+
+0:02:15.070,0:02:18.950
+sold as “radar sensing devices”.
+
+0:02:18.950,0:02:26.000
+They come in different shapes, but all look
+somehow similar: They consist of an IC, a
+
+0:02:26.000,0:02:32.640
+transistor, some passive elements, and a “snake”
+like trace on the PCB.
+
+0:02:32.640,0:02:38.450
+There are some investigations in how these
+devices work, but for me, this is still not
+
+0:02:38.450,0:02:40.440
+completely clear.
+
+0:02:40.440,0:02:47.960
+What is obvious is, that the sender, the receiver,
+and the mixer all are integrated in one simple
+
+0:02:47.960,0:02:49.250
+transistor.
+
+0:02:49.250,0:02:53.250
+The antenna must be the trails on the PCB.
+
+0:02:53.250,0:02:57.010
+This is, what we can call: “Reduce to the
+max”.
+
+0:02:57.010,0:03:02.750
+The IC is only low frequency and is used for
+analysis.
+
+0:03:02.750,0:03:08.690
+It has nothing to do with the radar, and it
+is a very similar chip as used in the PIR
+
+0:03:08.690,0:03:09.740
+sensors.
+
+0:03:09.740,0:03:14.760
+Its main responsibility is to create the timing
+of the digital signal.
+
+0:03:14.760,0:03:18.909
+I leave a link in the description for more
+information about the working principle of
+
+0:03:18.909,0:03:20.790
+these devices.
+
+0:03:20.790,0:03:26.220
+But I have to admit, I still did not find
+a convincing explanation on how we can build
+
+0:03:26.220,0:03:31.209
+a sender, a receiver, and a mixer into one
+transistor.
+
+0:03:31.209,0:03:35.060
+If this works, it is really intelligent engineering!
+
+0:03:35.060,0:03:40.420
+Just a small remark about metal: Radar can
+not only detect metal.
+
+0:03:40.420,0:03:43.159
+It also can detect water.
+
+0:03:43.159,0:03:48.860
+This is used for example to create the rain
+maps on your smartphones.
+
+0:03:48.860,0:03:51.680
+And humans consist mainly of water…
+
+0:03:51.680,0:03:55.870
+So, I bought a few of these devices available
+on the internet.
+
+0:03:55.870,0:04:03.450
+And now, I want to answer some questions:
+- Can we use them on 3.3 or 5 volts?
+
+0:04:03.450,0:04:05.910
+- How much current they draw?
+
+0:04:05.910,0:04:10.130
+- How long do they stay “ON” if they detected
+somebody?
+
+0:04:10.130,0:04:15.440
+- How big is the distance they can detect
+the movement of an adult human?
+
+0:04:15.440,0:04:17.959
+- What is the angle of detection?
+
+0:04:17.959,0:04:23.510
+- Do they “see” trough obstacles like
+glass, wood, or even walls?
+
+0:04:23.510,0:04:25.560
+- What additional features do they offer?
+
+0:04:25.560,0:04:30.240
+- Can I use more than one device in the same
+room?
+
+0:04:30.240,0:04:32.530
+Or are there interferences?
+
+0:04:32.530,0:04:39.190
+And because they work on quite high frequencies,
+I want also to know if they disturb my Wi-Fi
+
+0:04:39.190,0:04:40.190
+network.
+
+0:04:40.190,0:04:49.320
+First, we look at the contenders:
+The RCWL-0516 is the cheapest device and it
+
+0:04:49.320,0:04:53.370
+should work from 3.3 to 28 volts.
+
+0:04:53.370,0:05:00.070
+It offers a connection for a LDR resistor
+to inhibit its function if the ambient light
+
+0:05:00.070,0:05:02.250
+level is already high.
+
+0:05:02.250,0:05:04.560
+I did not test this function.
+
+0:05:04.560,0:05:11.900
+It also has a stabilized output of 3.3 volts
+and you influence its sensitivity and delay
+
+0:05:11.900,0:05:17.980
+time by adding a resistor or a capacitor.
+
+0:05:17.980,0:05:22.850
+A small remark: The 3.3 volt pin is an output.
+
+0:05:22.850,0:05:26.470
+The Vcc pin is called Vin.
+
+0:05:26.470,0:05:30.820
+The next is the HW-MS03.
+
+0:05:30.820,0:05:37.850
+It looks similar, and also has a similar size,
+but you cannot influence its behavior by adding
+
+0:05:37.850,0:05:38.850
+components.
+
+0:05:38.850,0:05:41.180
+You would have to replace them.
+
+0:05:41.180,0:05:45.050
+Next comes the XYC-WB-G1.
+
+0:05:45.050,0:05:55.630
+It also has no possibilities to add components,
+and it has a JST 2.0 connector.
+
+0:05:55.630,0:06:02.530
+The WB3-12 seems to be built for a particular
+purpose: To be used in round lamps.
+
+0:06:02.530,0:06:08.990
+To get this small footprint, they used two
+PCBs which are soldered together.
+
+0:06:08.990,0:06:13.200
+It also seems to have the possibility to add
+an LDR.
+
+0:06:13.200,0:06:18.220
+The sensitivity and the delay can be influenced
+by replacing two resistors.
+
+0:06:18.220,0:06:22.170
+They are quite tiny, but accessible.
+
+0:06:22.170,0:06:25.700
+This device also needs a pull-up resistor
+at the output.
+
+0:06:25.700,0:06:27.770
+Otherwise it will not work.
+
+0:06:27.770,0:06:29.940
+The last in the crowd is the HFS-DC06.
+
+0:06:29.940,0:06:35.080
+This device is bigger than the others.
+
+0:06:35.080,0:06:39.850
+It has trim potentiometers to influence delay
+and sensitivity.
+
+0:06:39.850,0:06:42.670
+And it has some sort of metal shielding.
+
+0:06:42.670,0:06:46.150
+It is also the most expensive of all.
+
+0:06:46.150,0:06:49.950
+First, we tested the possible supply voltages.
+
+0:06:49.950,0:06:57.250
+Despite the promises in the leaflets, most
+of the devices are not usable at 3.3 volt.
+
+0:06:57.250,0:07:04.000
+They expose a particular behavior: If no movement
+is detected, the output switch forth and back
+
+0:07:04.000,0:07:06.150
+between ON and OFF.
+
+0:07:06.150,0:07:13.530
+The only module which works also on 3.3V is
+the HFS-DC06.
+
+0:07:13.530,0:07:17.090
+All modules claim to run up to 12 volts or
+higher.
+
+0:07:17.090,0:07:22.830
+I did not test it, but because most of them
+have some sort of voltage regulators on board,
+
+0:07:22.830,0:07:28.510
+and all only draw small currents, I can believe,
+that they work also on higher voltages.
+
+0:07:28.510,0:07:33.280
+Next, we measured the current needed during
+operation.
+
+0:07:33.280,0:07:36.390
+Most of them only need 2-3 mA.
+
+0:07:36.390,0:07:44.080
+Only the HFS-DC06 needs 14 to 22 mA.
+
+0:07:44.080,0:07:51.720
+A quick comparison with PIR sensors shows,
+that these consume below 1 mA, and the ultrasonic
+
+0:07:51.720,0:07:55.630
+sensors consume around 5 mA.
+
+0:07:55.630,0:08:02.190
+The time a sensor stays “ON” after triggering
+decides in which scenario we can use it.
+
+0:08:02.190,0:08:07.880
+If we work with microcontrollers, we prefer
+a short on-time, because we want to define
+
+0:08:07.880,0:08:10.940
+the timing with our software.
+
+0:08:10.940,0:08:16.340
+If we want to use the sensor stand-alone,
+we usually need a longer on-time.
+
+0:08:16.340,0:08:24.190
+Without changing or adding any parts on the
+sensors, two sensors stay on for about 5 seconds,
+
+0:08:24.190,0:08:28.330
+and the other two stay on for 20 to 30 seconds.
+
+0:08:28.330,0:08:36.490
+Again, the HFS-DC06 is different: It starts
+at 5 seconds and can be much longer, depending
+
+0:08:36.490,0:08:39.630
+on the position of the trim potentiometer.
+
+0:08:39.630,0:08:44.450
+We were not patient enough to test the longest
+possible delay.
+
+0:08:44.450,0:08:50.570
+Now comes the fun: How well do these devices
+detect movements of humans?
+
+0:08:50.570,0:08:54.260
+For these tests, I had help from a neighbor.
+
+0:08:54.260,0:09:00.730
+Because my house is quite small, and the weather
+outside is rainy, we decided to use a 4-meter
+
+0:09:00.730,0:09:01.730
+distance.
+
+0:09:01.730,0:09:06.810
+Anyway, in many situations, 4 meters is already
+too much.
+
+0:09:06.810,0:09:13.410
+All devices were able to detect even small
+movements of arms over a distance of 4 meters.
+
+0:09:13.410,0:09:18.900
+Which is for me very astonishing, that such
+simple devices have this capability.
+
+0:09:18.900,0:09:27.250
+The only device which was clearly more sensitive
+was again the HFS-DC06.
+
+0:09:27.250,0:09:33.810
+We did a short test, and were able to detect
+also movements over a distance of 8 meters.
+
+0:09:33.810,0:09:37.330
+Of course, with the maximum sensitivity selected.
+
+0:09:37.330,0:09:43.260
+BTW: Its sensitivity selection works fine
+and you can restrict the detection range down
+
+0:09:43.260,0:09:45.090
+to about 1 meter.
+
+0:09:45.090,0:09:52.810
+PIR and ultrasonic detectors had a detection
+range of about +/- 30 degrees.
+
+0:09:52.810,0:09:54.630
+How about these new devices?
+
+0:09:54.630,0:10:01.810
+Radars, in general are very direction sensitive,
+because we want to detect also exactly, where
+
+0:10:01.810,0:10:03.830
+the planes are.
+
+0:10:03.830,0:10:11.390
+In order to test this, we turned the sensors
+by 180 degrees and did the same tests again.
+
+0:10:11.390,0:10:15.900
+Interestingly, we did not see a difference
+in sensitivity.
+
+0:10:15.900,0:10:20.690
+With the exception of the HFS-DC06.
+
+0:10:20.690,0:10:25.120
+This device was not sensitive at all in the
+reverse direction.
+
+0:10:25.120,0:10:29.730
+So, we turned the sensors only 90 degrees.
+
+0:10:29.730,0:10:34.300
+And, strange enough, they worked as good as
+before.
+
+0:10:34.300,0:10:38.140
+The only exception, again, was the HFS-DC06.
+
+0:10:38.140,0:10:44.170
+It only has an opening of about 180 degrees.
+
+0:10:44.170,0:10:48.120
+The other devices are sensitive over 360 degrees.
+
+0:10:48.120,0:10:52.620
+And, as we will see later, also up and down.
+
+0:10:52.620,0:10:57.130
+So, they expose no directivity at all.
+
+0:10:57.130,0:10:58.770
+Very interesting!
+
+0:10:58.770,0:11:03.360
+We all know, that radio waves also travel
+through walls.
+
+0:11:03.360,0:11:09.410
+And because our radar sensors claim to work
+with radio waves, we have to test also this
+
+0:11:09.410,0:11:10.410
+claim.
+
+0:11:10.410,0:11:14.730
+So, the first test is if they travel through
+a glass window.
+
+0:11:14.730,0:11:19.460
+We discovered, that glass is quite a strong
+insulator.
+
+0:11:19.460,0:11:24.130
+Also on shorter distances, we were not able
+to detect movements behind glass.
+
+0:11:24.130,0:11:26.900
+Next, we tried the wooden table.
+
+0:11:26.900,0:11:32.640
+For this experiment, I had to take the role
+of an “underdog” and go on my knees.
+
+0:11:32.640,0:11:38.480
+Here, the devices had no problem to detect
+even very small movements.
+
+0:11:38.480,0:11:44.000
+And the wood has a thickness of about 4 cm
+or 1.6 inches.
+
+0:11:44.000,0:11:45.000
+Great!
+
+0:11:45.000,0:11:53.890
+5 mm or 0.2-inch Acrylic glass did also not
+hinder the sensitivity a lot.
+
+0:11:53.890,0:11:59.980
+15mm or 0.6-inch wood however, reduced the
+sensitivity about 25%.
+
+0:11:59.980,0:12:05.500
+So, all-in all this is a great new category
+of devices.
+
+0:12:05.500,0:12:11.820
+Some of them claim to work on 5.8 GHz, others
+on 24 GHz.
+
+0:12:11.820,0:12:14.520
+But the dimensions are not much different.
+
+0:12:14.520,0:12:18.020
+So, these numbers are hard to believe for
+me.
+
+0:12:18.020,0:12:25.070
+And I read somewhere, that they can work also
+on 2.4 GHz (which would only be a missing
+
+0:12:25.070,0:12:28.750
+point in the 24 GHz number).
+
+0:12:28.750,0:12:34.160
+And this would be very harmful for my Wi-Fi
+or Bluetooth devices.
+
+0:12:34.160,0:12:36.800
+So, let’s check.
+
+0:12:36.800,0:12:40.180
+My spectrum analyzer only covers up to 3 GHz.
+
+0:12:40.180,0:12:44.910
+So, I cannot measure the 5.8 GHz Wi-Fi band.
+
+0:12:44.910,0:12:50.840
+But at least, below 3 GHz none of the devices
+emitted energy.
+
+0:12:50.840,0:12:59.800
+Except the XYC-WB-G1: It emits a small signal
+around 3 GHz.
+
+0:12:59.800,0:13:05.510
+I did not found any information about this
+device, and even the picture on Aliexpress
+
+0:13:05.510,0:13:08.390
+is different to the one I got.
+
+0:13:08.390,0:13:13.800
+But still, the signal is not on 2.4 and quite
+small.
+
+0:13:13.800,0:13:16.420
+So, no danger here.
+
+0:13:16.420,0:13:21.779
+The next question, of course: What happens,
+if I use more than one device in the same
+
+0:13:21.779,0:13:23.260
+room?
+
+0:13:23.260,0:13:31.040
+To test that, we powered all available devices
+on the table and did the sensitivity test.
+
+0:13:31.040,0:13:33.480
+We did not discover any difference.
+
+0:13:33.480,0:13:38.130
+So, they seem to somehow have no big influence
+on each other.
+
+0:13:38.130,0:13:41.200
+Which, again, is a mystery for me.
+
+0:13:41.200,0:13:51.650
+Even two of the very same make worked without
+any problems in a distance of 10 cm!
+
+0:13:51.650,0:13:57.269
+Summarized:
+- These cheap and small sensors all work
+
+0:13:57.269,0:14:02.180
+- They can detect human movements in a distance
+of at last 4 meters
+
+0:14:02.180,0:14:07.040
+- Most of them work from 5 volts and up.
+
+0:14:07.040,0:14:12.710
+Only one worked on 3.3 volts
+- Sensitivity and delay time can be influenced
+
+0:14:12.710,0:14:19.990
+by either trim potentiometers, added resistors
+or capacitors, or by replacing resistors or
+
+0:14:19.990,0:14:21.529
+capacitors.
+
+0:14:21.529,0:14:26.029
+The latter is not easy because the parts are
+very small.
+
+0:14:26.029,0:14:31.100
+- For the usage with microcontrollers, 5 second
+delay is the maximum.
+
+0:14:31.100,0:14:34.130
+20-30 seconds is useless.
+
+0:14:34.130,0:14:37.200
+- The devices work in all directions.
+
+0:14:37.200,0:14:43.910
+Only one exception has a directionality
+- These devices detect movement also through
+
+0:14:43.910,0:14:45.550
+plastic, or wood.
+
+0:14:45.550,0:14:48.670
+Even thin walls are no big obstacle.
+
+0:14:48.670,0:14:52.360
+All-in all my favorite is the RCWL-0516.
+
+0:14:52.360,0:15:00.690
+It is simple and cheap, has a decent sensitivity
+and a short delay time.
+
+0:15:00.690,0:15:05.710
+The only disadvantage: It cannot be used in
+3.3 volt environments.
+
+0:15:05.710,0:15:11.970
+If you need a lot of flexibility, the HFS-DC06
+is the best choice.
+
+0:15:11.970,0:15:16.300
+However, it is roughly 10 times more expensive.
+
+0:15:16.300,0:15:19.089
+The others are somehow in-between.
+
+0:15:19.089,0:15:25.150
+I like these devices, also because they can
+be mounted inside a plastic box without any
+
+0:15:25.150,0:15:27.750
+contact to the outside.
+
+0:15:27.750,0:15:33.810
+An example for that is this 220-volt proximity
+sensor form Banggood.
+
+0:15:33.810,0:15:39.779
+It is a completely closed plastic case, and
+it comes with dip switches to select sensitivity
+
+0:15:39.779,0:15:40.780
+and delay.
+
+0:15:40.780,0:15:45.910
+I mounted one of those for my remote desk
+in my lab.
+
+0:15:45.910,0:15:47.200
+And it works very well.
+
+0:15:47.200,0:15:51.710
+I hope, this video was useful or at least
+interesting for you.
+
+0:15:51.710,0:15:54.389
+If true, then like.
+
+0:15:54.389,0:15:54.889
+Bye
