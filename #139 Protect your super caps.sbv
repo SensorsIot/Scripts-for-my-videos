@@ -1,0 +1,568 @@
+0:00:00.480,0:00:01.850
+Grüezi YouTubers.
+
+0:00:01.850,0:00:04.220
+Here is the guy with the Swiss accent.
+
+0:00:04.220,0:00:07.540
+With a new episode around sensors and microcontrollers.
+
+0:00:07.540,0:00:15.059
+In video #133 we used super capacitors to
+safely shutdown the Rapberry Pi.
+
+0:00:15.059,0:00:20.480
+In the comments, viewers asked about over
+voltage protection of the super caps.
+
+0:00:20.480,0:00:24.480
+I will show you a big and small and cheap
+possibility.
+
+0:00:24.480,0:00:28.849
+And I will show you one concept which does
+not really work.
+
+0:00:28.849,0:00:31.570
+But why do we have to protect Super Capacitors?
+
+0:00:31.570,0:00:34.010
+And how can we protect them?
+
+0:00:34.010,0:00:39.510
+Most Super capacitors are only specified up
+to 2.7 volt.
+
+0:00:39.510,0:00:44.340
+If we need higher voltages, we have to connect
+a few of them in series.
+
+0:00:44.340,0:00:51.420
+To give the Raspberry a save shutdown I used
+two caps because it runs on 5 volt USB.
+
+0:00:51.420,0:00:59.039
+So, the basic diagram is like that: Two Super
+capacitors in series across the 5 volt connector.
+
+0:00:59.039,0:01:04.300
+If we charge now capacitors in series, the
+current is equal in both capacitors.
+
+0:01:04.300,0:01:09.730
+But, if the capacitance are not completely
+equal, the one with the lower capacitance
+
+0:01:09.730,0:01:15.550
+charges faster and its voltage can go over
+the rated 2.7 volts.
+
+0:01:15.550,0:01:20.770
+To avoid that, we have to connect a resistor
+in parallel to the smaller capacitor.
+
+0:01:20.770,0:01:26.990
+Like that, part of the current can flow through
+this resistor and therefore is not used for
+
+0:01:26.990,0:01:29.570
+overcharging the capacitor.
+
+0:01:29.570,0:01:34.890
+Because we do not know, which of the capacitors
+is smaller and exactly how much, and because
+
+0:01:34.890,0:01:39.610
+some other things can happen, we add a small
+switch to this resistor.
+
+0:01:39.610,0:01:45.980
+It switches only, if the voltage of the capacitor
+is close to the 2.7 volt.
+
+0:01:45.980,0:01:51.750
+Like that, we can use quite small resistors
+and bypass a big amount of the current.
+
+0:01:51.750,0:01:57.800
+As soon as the voltage is in the save zone,
+the resistor is switched off again.
+
+0:01:57.800,0:02:05.640
+If we use such a concept for all our capacitors,
+and our protection voltage is 2.7 volt, they
+
+0:02:05.640,0:02:11.060
+are protected against over voltage as long
+as the total voltage is lower than the number
+
+0:02:11.060,0:02:13.610
+of capacitors times 2.7.
+
+0:02:13.610,0:02:19.239
+In our case, the voltage would have to stay
+below 5.4 volts.
+
+0:02:19.239,0:02:21.609
+Which is ok with USB.
+
+0:02:21.609,0:02:26.480
+The specification allows a maximum voltage
+of 5.2 volts.
+
+0:02:26.480,0:02:31.599
+Let’s start with the simplest concept: Zener
+diodes.
+
+0:02:31.599,0:02:37.269
+The easiest way would be to solder a Zener
+diode across each super cap.
+
+0:02:37.269,0:02:39.859
+But what is a Zener diode?
+
+0:02:39.859,0:02:45.129
+Normal diodes conduct current only in one
+direction and block it in the other direction
+
+0:02:45.129,0:02:49.319
+(at least up to their very high blocking voltage).
+
+0:02:49.319,0:02:52.060
+Zener diodes are somehow different.
+
+0:02:52.060,0:02:58.540
+In principle, they also block current in the
+“wrong” direction up to a certain voltage.
+
+0:02:58.540,0:03:02.430
+But this voltage is low and exactly specified.
+
+0:03:02.430,0:03:06.030
+You can get Zener diodes for many voltages.
+
+0:03:06.030,0:03:12.430
+If we check one with our transistor tester,
+it shows two diodes in opposite direction.
+
+0:03:12.430,0:03:16.760
+The one with the voltage of 0.8 volt is the
+normal diode.
+
+0:03:16.760,0:03:20.519
+The other one with 2.4 volt is the Zener part.
+
+0:03:20.519,0:03:27.330
+Let’s have a closer look: On the positive
+voltage side, we see a curve of a normal diode.
+
+0:03:27.330,0:03:30.540
+On the negative voltage side, we see the Zener
+behavior.
+
+0:03:30.540,0:03:34.420
+At the beginning, nearly no current flows.
+
+0:03:34.420,0:03:38.299
+At a particular voltage, the current starts
+to flow.
+
+0:03:38.299,0:03:41.540
+But this is not at a sharp voltage as we can
+see.
+
+0:03:41.540,0:03:44.349
+The curve is only bent.
+
+0:03:44.349,0:03:49.930
+Because all these things happen on the negative
+voltage side, we have to use the Zener diodes
+
+0:03:49.930,0:03:52.890
+always in reverse direction.
+
+0:03:52.890,0:03:55.599
+This is, why I mirror the curve now.
+
+0:03:55.599,0:04:02.359
+Just a small remark: Not all transistor testers
+are able to measure Zener diodes properly.
+
+0:04:02.359,0:04:07.209
+And all can only detect these diodes if they
+have a low Zener voltage.
+
+0:04:07.209,0:04:11.349
+So, let’s check how this simple concept
+works.
+
+0:04:11.349,0:04:14.989
+I have 2.4 volt and 2.7 volt Zeners.
+
+0:04:14.989,0:04:18.010
+I start my test with no protection at all.
+
+0:04:18.010,0:04:24.470
+Two 10 Farad Super Caps are connected in Series
+and 5 volt is applied.
+
+0:04:24.470,0:04:29.410
+If both are discharged at the beginning, they
+load quite evenly.
+
+0:04:29.410,0:04:33.620
+The difference is small, because their capacities
+are similar.
+
+0:04:33.620,0:04:42.120
+I discharge now the left capacitor a little
+to simulate uneven capacities.
+
+0:04:42.120,0:04:47.500
+If I load them again, the right one quickly
+approaches 2.7 volts and I have to stop the
+
+0:04:47.500,0:04:50.340
+experiment in order to not harm it.
+
+0:04:50.340,0:04:55.650
+Let’s now protect this Cap with a 2.4 volt
+Zener.
+
+0:04:55.650,0:04:59.900
+To understand what happens, I measure the
+current through the diode with the yellow
+
+0:04:59.900,0:05:01.580
+Fluke meter.
+
+0:05:01.580,0:05:08.080
+As we already know from the chart, the diode
+already starts to conduct at below 2.4 volt.
+
+0:05:08.080,0:05:14.880
+So, a part of the current is now “diverged”
+through the diode instead of the capacitor.
+
+0:05:14.880,0:05:18.010
+This part does not charge the capacitor anymore.
+
+0:05:18.010,0:05:21.290
+So, the other cap can catch up.
+
+0:05:21.290,0:05:27.140
+But because the current through the diode
+is quite small, the protection is not big,
+
+0:05:27.140,0:05:31.030
+and the voltage exceed 2.7 volts a little.
+
+0:05:31.030,0:05:35.830
+If the imbalance between the two capacitors
+would be bigger, this protection would not
+
+0:05:35.830,0:05:37.250
+work anymore.
+
+0:05:37.250,0:05:43.910
+And, we easily can imagine, that a 2.7 volt
+Zener would not work at all.
+
+0:05:43.910,0:05:49.410
+So, this is a simple protection, which works
+somehow for these small capacitors.
+
+0:05:49.410,0:05:56.280
+But fortunately, we have a better one: The
+TL431.
+
+0:05:56.280,0:06:02.610
+This part is called “Precision Programmable
+Reference” and it is a very versatile part
+
+0:06:02.610,0:06:04.870
+which can used for many applications.
+
+0:06:04.870,0:06:12.050
+It is also quite cheap: 50 pieces for 1.20,
+including shipping.
+
+0:06:12.050,0:06:19.150
+It is even cheaper than a 2.4 volt Zener,
+where 50 pieces cost more than 3 dollars.
+
+0:06:19.150,0:06:25.030
+The TL431 is a neat small part in a TO-92
+package.
+
+0:06:25.030,0:06:30.710
+Its symbol looks much like a Zener diode,
+with the exception that it has three pins
+
+0:06:30.710,0:06:33.020
+instead of only two.
+
+0:06:33.020,0:06:36.050
+The third pin is called REFERENCE.
+
+0:06:36.050,0:06:41.790
+If we look at the block diagram of the chip,
+we see, that it consists of a precise 2.5
+
+0:06:41.790,0:06:46.470
+volt reference and an Opamp used as a comparator.
+
+0:06:46.470,0:06:52.160
+As soon as the reference voltage is above
+the 2.5 volt, the transistor switches on.
+
+0:06:52.160,0:06:59.000
+So, if we connect the REFERENCE and the cathode
+pins, we get this diagram.
+
+0:06:59.000,0:07:04.360
+Because I mirrored the diagram of the Zener
+diode, both are compatible.
+
+0:07:04.360,0:07:09.210
+We have the positive voltage to the right
+and positive current up.
+
+0:07:09.210,0:07:15.460
+We immediately see the difference: The bend
+of the TL431 is much sharper.
+
+0:07:15.460,0:07:23.180
+At exactly 2.5 volts it starts to conduct
+up to its maximum rating of 150 mA.
+
+0:07:23.180,0:07:26.370
+This is nearly the curve we were looking for.
+
+0:07:26.370,0:07:31.470
+The only thing is, that it is at 2.5 instead
+of 2.7 volts.
+
+0:07:31.470,0:07:39.050
+So, let’s try out and replace the 2.4 volt
+Zener with the TL431.
+
+0:07:39.050,0:07:46.610
+We also start with unevenly charged capacitors
+and see, that the current through the TL431
+
+0:07:46.610,0:07:51.680
+starts to increase much more and much sharper
+at 2.5 volts.
+
+0:07:51.680,0:07:57.150
+The voltage across the super cap still goes
+above 2.5 volt, because the parts are not
+
+0:07:57.150,0:07:58.840
+ideal.
+
+0:07:58.840,0:08:01.770
+But still, the behavior is much better.
+
+0:08:01.770,0:08:08.020
+At the end, the protected and the unprotected
+caps each show around 2.5 volts.
+
+0:08:08.020,0:08:14.090
+If I would now increase the voltage to 5.3
+volt, only the unprotected cap’s voltage
+
+0:08:14.090,0:08:18.430
+would increase and would exceed its specified
+voltage.
+
+0:08:18.430,0:08:20.200
+Which is obviously not good.
+
+0:08:20.200,0:08:23.400
+So, we could protect both capacitors.
+
+0:08:23.400,0:08:28.710
+Which anyway would be a good idea, because
+we do not know, which one has a smaller capacity.
+
+0:08:28.710,0:08:33.189
+Below 5 volt total voltage, this would work
+fine.
+
+0:08:33.189,0:08:39.719
+But as soon as we cross these 5 volts, both
+TL431 would start to conduct and produce a
+
+0:08:39.719,0:08:41.099
+short cut.
+
+0:08:41.099,0:08:45.680
+They would heat up, and maybe even would destroy
+themselves.
+
+0:08:45.680,0:08:51.529
+Maybe you remember the word “programmable”
+from the description of the TL431?
+
+0:08:51.529,0:08:57.630
+Programmable means, that we can change the
+“Zener voltage” with a simple trick: We
+
+0:08:57.630,0:09:01.279
+connect the reference pin to a voltage divider.
+
+0:09:01.279,0:09:08.689
+Now, the reference measures a lower voltage
+and therefore, reaches the 2.5 volts at a
+
+0:09:08.689,0:09:10.149
+higher voltage.
+
+0:09:10.149,0:09:15.579
+If we calculate our resistors with the formula
+from the data sheet, we can set the cutoff
+
+0:09:15.579,0:09:18.389
+voltage to 2.7 volt.
+
+0:09:18.389,0:09:19.910
+Problem solved!
+
+0:09:19.910,0:09:24.629
+If you really want to make sure, that nothing
+bad happens to your protectors, you can add
+
+0:09:24.629,0:09:26.930
+a small series resistor.
+
+0:09:26.930,0:09:31.550
+Like that, the current through the TL431 is
+limited.
+
+0:09:31.550,0:09:36.160
+If you plan to work only with USB voltages,
+this is not necessary.
+
+0:09:36.160,0:09:42.839
+So, this is a great concept to protect small
+super caps when you are sure, that the two
+
+0:09:42.839,0:09:44.620
+capacities are similar.
+
+0:09:44.620,0:09:51.320
+To show you the limitations, I double the
+capacitance of one capacitor by adding a second
+
+0:09:51.320,0:09:52.320
+one.
+
+0:09:52.320,0:09:58.300
+Now, we see, that the current through the
+TL431 gets quite high, and the voltage crosses
+
+0:09:58.300,0:10:03.610
+2.7 volt, even with a cutoff voltage of 2.5
+volt.
+
+0:10:03.610,0:10:11.190
+To avoid that, I bought the voltage protectors
+shown in the last Mailbag video #137.
+
+0:10:11.190,0:10:15.570
+They can be used for large capacitors up to
+500 Farad.
+
+0:10:15.570,0:10:20.499
+I re-engineered its PCB and its diagram is
+here.
+
+0:10:20.499,0:10:26.810
+They also use a TL431, but they use a big
+transistor to amplify the effect.
+
+0:10:26.810,0:10:29.709
+So, let’s check, if it works.
+
+0:10:29.709,0:10:34.949
+I keep the “tougher” scenario with the
+two uneven capacitors and protect the smaller
+
+0:10:34.949,0:10:35.949
+one.
+
+0:10:35.949,0:10:41.610
+Now with a protection board instead of the
+TL431.
+
+0:10:41.610,0:10:43.670
+The rest stays the same.
+
+0:10:43.670,0:10:50.180
+Here, the protection kicks in at 2.66 volt
+and the voltage never exceeds this value . The
+
+0:10:50.180,0:10:53.259
+other capacitor can easily catch up.
+
+0:10:53.259,0:10:59.089
+And if we would have two such protection boards
+in series, our USB voltage could go up to
+
+0:10:59.089,0:11:07.990
+2 times 2.66 volt = 5.32 volt, which is above
+USB specs anyway.
+
+0:11:07.990,0:11:11.589
+Summarized:
+We wanted to protect our Super capacitors
+
+0:11:11.589,0:11:16.820
+against over voltage
+The first concept using simple Zener diodes
+
+0:11:16.820,0:11:24.899
+worked somehow, but with very narrow limitations
+The usage of a TL431 Precision Programmable
+
+0:11:24.899,0:11:31.079
+Reference did what we wanted for our small
+capacitors, and even at lower cost.
+
+0:11:31.079,0:11:37.350
+With a voltage divider, we were able to set
+the protection voltage at the right level.
+
+0:11:37.350,0:11:43.189
+We looked at the diagram of a commercial product
+for larger capacitors and discovered, that
+
+0:11:43.189,0:11:49.980
+they also use a TL431
+The commercial product worked too, and, because
+
+0:11:49.980,0:11:55.300
+it supports much bigger currents, can also
+be used for bigger capacitors.
+
+0:11:55.300,0:12:01.300
+BTW: If we do the calculation of the voltage
+divider of the protection board, we find the
+
+0:12:01.300,0:12:04.910
+2.66 volts we measured before.
+
+0:12:04.910,0:12:05.910
+Not bad!
+
+0:12:05.910,0:12:10.269
+I hope, this video was useful or at least
+interesting for you.
+
+0:12:10.269,0:12:12.399
+If true then like.
+
+0:12:12.399,0:12:12.930
+Bye
