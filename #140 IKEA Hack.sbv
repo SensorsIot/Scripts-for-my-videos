@@ -1,0 +1,594 @@
+0:00:00.520,0:00:02.080
+Grüezi YouTubers.
+
+0:00:02.080,0:00:04.790
+Here is the guy with the Swiss accent.
+
+0:00:04.790,0:00:08.680
+With a new episode around sensors and microcontrollers.
+
+0:00:08.680,0:00:15.630
+Lately, IKEA jumped on the IOT bandwagon and
+released a new line.
+
+0:00:15.630,0:00:22.970
+It is called TRÅDFRI smart lightning, and
+is a direct competitor to Philips hue.
+
+0:00:22.970,0:00:30.410
+Tradfri is Danish and means “wire-free”
+This line consists of controllers, lamps,
+
+0:00:30.410,0:00:31.830
+and a gateway.
+
+0:00:31.830,0:00:37.180
+As always, IKEA has an attractive price point
+for its devices.
+
+0:00:37.180,0:00:40.290
+The cheapest set is around 20 dollars.
+
+0:00:40.290,0:00:45.820
+Mine has variable color temperature and costed
+around 30 dollars.
+
+0:00:45.820,0:00:57.820
+Recently I got these two devices from my local
+IKEA store it is a Tradfri LED lamp and a
+
+0:00:57.820,0:00:59.530
+controller.
+
+0:00:59.530,0:01:08.150
+So let's hack it!
+
+0:01:08.150,0:01:18.570
+including a battery
+Dangerous but nicely looking: Actually, you
+
+0:01:18.570,0:01:27.880
+see this as a European E27 I think it's called
+plug here we can screw it in somewhere.
+
+0:01:27.880,0:01:33.200
+So, let's test if it works and how it works.
+
+0:01:33.200,0:01:42.600
+This is magnetic here and can be taken off.
+
+0:01:42.600,0:01:48.939
+So, we open it up to mount the battery.
+
+0:01:48.939,0:01:54.259
+And here we have the manual even for people
+who cannot read.
+
+0:01:54.259,0:02:01.509
+We have to switch the lamp on and press this
+button for more than 10 seconds and then it
+
+0:02:01.509,0:02:03.740
+will be paired I assume.
+
+0:02:03.740,0:02:11.670
+So, you guys still have to be able to read
+a little bit at least that you can read the
+
+0:02:11.670,0:02:13.160
+five centimeters or two inches.
+
+0:02:13.160,0:02:14.160
+Distance.
+
+0:02:14.160,0:02:19.110
+So, let's try.
+
+0:02:19.110,0:02:25.250
+One two three four five six seven eight nine
+ten.
+
+0:02:25.250,0:02:27.750
+So that's for sure more than ten seconds.
+
+0:02:27.750,0:02:37.130
+Personally, I think it was already paired
+because I bought this as a kit together and
+
+0:02:37.130,0:02:42.970
+it is a nice color, not a cold white, more
+a warm white.
+
+0:02:42.970,0:02:46.310
+Ahh, it works!
+
+0:02:46.310,0:02:50.520
+I can switch it on and switch it off.
+
+0:02:50.520,0:03:01.400
+So, we have three functions: On/off; the color
+temperature and the intensity.
+
+0:03:01.400,0:03:07.730
+Now of
+course this is nice but I want to use this
+
+0:03:07.730,0:03:10.500
+with my MQTT stuff.
+
+0:03:10.500,0:03:15.040
+So we have to hack this one here.
+
+0:03:15.040,0:03:23.490
+So always if you start to hack you take out
+the battery, because otherwise you might be
+
+0:03:23.490,0:03:44.080
+able to destroy somehow your device electrically,
+and this is not what we want.
+
+0:03:44.080,0:04:02.650
+So, let's continue on the bench.
+
+0:04:02.650,0:04:09.290
+One thing is interesting here: This is marked
+from the supplier not from me.
+
+0:04:09.290,0:04:12.600
+It is some handmade stuff here.
+
+0:04:12.600,0:04:21.820
+This is probably not yet a full production
+run, it's maybe still done with some manual
+
+0:04:21.820,0:04:22.820
+work.
+
+0:04:22.820,0:04:28.990
+Here we see, we have one module which is soldered
+to a second module.
+
+0:04:28.990,0:04:35.560
+And we also see here that we have some test
+points.
+
+0:04:35.560,0:04:42.160
+Fortunately, I got some help.
+
+0:04:42.160,0:04:55.590
+This is a German magazine and they do some
+stuff with IOT and so on and they also hacked
+
+0:04:55.590,0:05:01.990
+this one here So I have some information about
+the different pins.
+
+0:05:01.990,0:05:04.930
+I do not need to hack them myself.
+
+0:05:04.930,0:05:07.259
+But it's in German.
+
+0:05:07.259,0:05:09.639
+I will leave a link in the description.
+
+0:05:09.639,0:05:17.740
+Let's check if it still works because otherwise
+it's useless.
+
+0:05:17.740,0:05:19.819
+It still works!
+
+0:05:19.819,0:05:28.749
+Fortunately, I did not destroy it completely
+when I had to take it apart.
+
+0:05:28.749,0:05:37.240
+I connect now all wires according the “MAKE
+Magazine” with the different colors.
+
+0:05:37.240,0:05:41.229
+I was really glad that I had wires with all
+these colors.
+
+0:05:41.229,0:05:48.050
+So, we have now a clear separation:
+Here we have ground, the test points here
+
+0:05:48.050,0:05:55.840
+all connected and three pins of this module
+- so let's do some measurements.
+
+0:05:55.840,0:06:03.900
+Now everything is connected to the test points
+and to some other points here and now we try
+
+0:06:03.900,0:06:06.039
+to find out which one is which.
+
+0:06:06.039,0:06:17.569
+I connect it to the orange and here I have
+the oscilloscope, and if I press the on/off
+
+0:06:17.569,0:06:22.460
+button you see signal on the orange wire is
+on/off.
+
+0:06:22.460,0:06:26.180
+And it has negative logic.
+
+0:06:26.180,0:06:30.900
+If I press it, it shows zero, if I release
+it shows three volts.
+
+0:06:30.900,0:06:43.479
+So, let's check the next one: Yellow is the
+left temperature.
+
+0:06:43.479,0:06:46.339
+We hacked the whole thing.
+
+0:06:46.339,0:06:57.169
+We have now three six eight wires and a we
+Wemos board which has a 3.3 volts output.
+
+0:06:57.169,0:07:06.159
+So, we can power also this one and I will
+do something like that, I will print probably
+
+0:07:06.159,0:07:15.009
+a round housing that I still can use it manually
+and I will put in a Wemos board here.
+
+0:07:15.009,0:07:16.110
+Like that.
+
+0:07:16.110,0:07:20.960
+So, I have now to connect all these wires
+to this Wemos board.
+
+0:07:20.960,0:07:30.430
+And this is done with my third hand which
+I built once in another video.
+
+0:07:30.430,0:07:34.729
+Let's do it:
+I come back when it's done.
+
+0:07:34.729,0:07:41.960
+Now everything is connected to this Wemos
+and I have already a programming USB cable
+
+0:07:41.960,0:07:49.680
+and now I do not need a battery because I
+have this red wire connected to 3.3 volts.
+
+0:07:49.680,0:07:53.539
+So, I get the 3.3 volts from the Wemos chip.
+
+0:07:53.539,0:07:58.330
+Let's now start with programming.
+
+0:07:58.330,0:08:05.610
+Before I start to program, I have a table
+here with all the different pins and commands
+
+0:08:05.610,0:08:11.749
+and colors and functions
+The sketch is based on the pubsubclient library
+
+0:08:11.749,0:08:15.699
+and on the work of Markus Ulsaß from Hamburg.
+
+0:08:15.699,0:08:20.020
+I used his work, but changed quite a lot in
+the area of pin handling.
+
+0:08:20.020,0:08:26.190
+I also added a function which reads the physical
+buttons of the remote control and sends it
+
+0:08:26.190,0:08:28.259
+via MQTT.
+
+0:08:28.259,0:08:33.160
+This can be used to control other devices
+than the IKEA lamp.
+
+0:08:33.160,0:08:35.700
+Here we have our definitions.
+
+0:08:35.700,0:08:43.890
+The on/off function listens to command 0,
+and an orange wire connects it to pin D7 on
+
+0:08:43.890,0:08:45.930
+the Wemos.
+
+0:08:45.930,0:08:53.500
+The «darker» listens to command 2, and a
+brown wire is connected to pin D5
+
+0:08:53.500,0:08:58.690
+In order to simplify the pin handling later
+on, I use an array.
+
+0:08:58.690,0:09:03.210
+This array defines which pin belongs to which
+command.
+
+0:09:03.210,0:09:07.390
+So, pin D2 belongs to command 0.
+
+0:09:07.390,0:09:12.560
+This is, why D2 is at the first place in the
+array.
+
+0:09:12.560,0:09:16.380
+All other pins follow in the right order.
+
+0:09:16.380,0:09:22.350
+If we go now to setup(), we find the MQTT
+specific functions.
+
+0:09:22.350,0:09:28.320
+The only thing I had to add is the definition
+of the pins as Input pins.
+
+0:09:28.320,0:09:36.210
+Here you see, that I do not need to define
+each pin separately, I just need a for loop.
+
+0:09:36.210,0:09:43.120
+The loop() section consists of three parts:
+In function «readbutton», I check, if a
+
+0:09:43.120,0:09:47.330
+physical button is pressed on the remote control.
+
+0:09:47.330,0:09:54.770
+If so, I publish a message with the topic
+IKEA/BUTTON and the command which fits this
+
+0:09:54.770,0:09:56.280
+button.
+
+0:09:56.280,0:10:04.740
+For non experienced C++ programmers, I focus
+on the The variable msg for a moment.
+
+0:10:04.740,0:10:08.070
+It is defined as an array of 50 characters.
+
+0:10:08.070,0:10:14.110
+This means, that we can stuff up to 50 characters
+in this variable.
+
+0:10:14.110,0:10:19.640
+But C++ does not know, how long this string
+really is.
+
+0:10:19.640,0:10:26.850
+Only if we place a «zero» character at the
+end of our string, C++ can handle it.
+
+0:10:26.850,0:10:29.630
+Our message is just one character long.
+
+0:10:29.630,0:10:34.450
+So, I add a zero character at the second place
+in the array.
+
+0:10:34.450,0:10:36.970
+Now, everything should work.
+
+0:10:36.970,0:10:43.090
+Here, I make sure, that I do not send the
+same command twice.
+
+0:10:43.090,0:10:52.330
+This part is called every 10 seconds and publishes
+a «alive» message to the IKEA/STATUS topic.
+
+0:10:52.330,0:10:57.690
+It can be used to check, if something happened
+to our remote control.
+
+0:10:57.690,0:11:02.390
+I could have used a delay () to wait the 10
+seconds.
+
+0:11:02.390,0:11:08.220
+But then, the whole sketch would not work,
+because we frequently have to check, if a
+
+0:11:08.220,0:11:12.320
+button was pressed or if a message arrived.
+
+0:11:12.320,0:11:18.800
+This is, why we used this statement to write
+a «non-blocking» code.
+
+0:11:18.800,0:11:22.500
+The rest of the loop() is MQTT specific.
+
+0:11:22.500,0:11:26.260
+But where do we get our messages with the
+commands?
+
+0:11:26.260,0:11:30.700
+There is nothing in the loop!
+
+0:11:30.700,0:11:33.680
+This library uses the concept of «callbacks».
+
+0:11:33.680,0:11:39.070
+Here, we defined a so called «callback function”.
+
+0:11:39.070,0:11:42.710
+This function is always called, if a message
+arrives.
+
+0:11:42.710,0:11:50.050
+Let’s have a look at what this function
+does: It prints the message in Serial monitor
+
+0:11:50.050,0:11:52.440
+and decodes the command.
+
+0:11:52.440,0:11:56.950
+I use human readable ASCII characters as MQTT
+payload.
+
+0:11:56.950,0:12:05.030
+So, we have to convert these commands to a
+number from 0 to 5, because our commands are
+
+0:12:05.030,0:12:07.000
+byte variables.
+
+0:12:07.000,0:12:08.810
+This is easily done.
+
+0:12:08.810,0:12:17.070
+If we subtract ascii ‘0’ from our human
+readable command, it is converted into a byte
+
+0:12:17.070,0:12:18.370
+variable.
+
+0:12:18.370,0:12:19.670
+Simple.
+
+0:12:19.670,0:12:27.440
+To test our sketch, I use my normal Mosquitto
+MQTT broker running on a Raspberry Pi zero.
+
+0:12:27.440,0:12:30.930
+We built it in video #126.
+
+0:12:30.930,0:12:37.540
+I also use the Node Red flows which we built
+in video #127 and #128.
+
+0:12:37.540,0:12:45.130
+First, I check, if I get the commands and
+if the commands are executed by the remote
+
+0:12:45.130,0:12:46.280
+control.
+
+0:12:46.280,0:12:52.140
+And really, the lamp goes on and off if I
+send the command 0.
+
+0:12:52.140,0:12:55.450
+And all other commands also work.
+
+0:12:55.450,0:13:01.580
+Now, I want to check if I can read the buttons.
+
+0:13:01.580,0:13:04.250
+Again, success.
+
+0:13:04.250,0:13:10.660
+So, summarized:
+We were able to hack the newest IKEA IOT devices
+
+0:13:10.660,0:13:16.490
+and connect them to a MQTT broker using a
+small Wemos module.
+
+0:13:16.490,0:13:22.170
+We were also able to connect it to our home
+automation system without buying an expensive
+
+0:13:22.170,0:13:23.740
+gateway.
+
+0:13:23.740,0:13:29.650
+In this process, some of us learned some small
+programming tricks with arrays.
+
+0:13:29.650,0:13:35.920
+And we learned, why delay() often has to be
+replaced by non-blocking code
+
+0:13:35.920,0:13:39.100
+But was this hack a good idea?
+
+0:13:39.100,0:13:40.860
+Yes and no.
+
+0:13:40.860,0:13:47.310
+If we hack available hardware, we often run
+into the same problem: These devices do not
+
+0:13:47.310,0:13:52.560
+give any machine readable feedback about the
+current status.
+
+0:13:52.560,0:13:58.800
+In manual mode, this is not necessary, because
+you can have a look at them and you see, if
+
+0:13:58.800,0:14:02.050
+they are on or off.
+
+0:14:02.050,0:14:08.600
+But if you want to automate them, your computer
+has to know the status of the device.
+
+0:14:08.600,0:14:14.130
+Like with the brightness, you can just issue
+too many «darker» commands till you are
+
+0:14:14.130,0:14:17.530
+very sure that the lamp is on the lowest level.
+
+0:14:17.530,0:14:23.100
+Now, you can start to count and you are pretty
+sure about what happens.
+
+0:14:23.100,0:14:27.370
+This is completely different with the on and
+off function.
+
+0:14:27.370,0:14:33.530
+Here, your computer never knows, if the lamp
+is really on or off.
+
+0:14:33.530,0:14:37.640
+And this is not what I call a reliable system.
+
+0:14:37.640,0:14:42.050
+It might work for a long time, but you are
+never sure.
+
+0:14:42.050,0:14:48.320
+So, this hack is just a first attempt and
+good, if you are still around to correct the
+
+0:14:48.320,0:14:50.350
+status if needed.
+
+0:14:50.350,0:14:56.120
+In a next hack, we have to dig one level deeper
+and hack the Zigbee protocol.
+
+0:14:56.120,0:15:02.800
+There, I hope, that we will find absolute
+commands to switch the lamp really on or off.
+
+0:15:02.800,0:15:05.320
+So, stay tuned.
+
+0:15:05.320,0:15:09.630
+I hope, this video was useful or at least
+interesting for you.
+
+0:15:09.630,0:15:12.380
+If true, then like.
+
+0:15:12.380,0:15:12.990
+Bye
