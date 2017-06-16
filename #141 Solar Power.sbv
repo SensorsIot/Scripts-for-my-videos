@@ -1,0 +1,487 @@
+0:00:00.530,0:00:07.090
+Grüezi YouTubers. Here is the guy with the
+Swiss accent. With a new episode around sensors
+
+0:00:07.090,0:00:12.889
+and microcontrollers.
+We all have our gadgets, and all of them need
+
+0:00:12.889,0:00:19.880
+some electricity. Usually, we use batteries
+or a power supply. Today I will start a small
+
+0:00:19.880,0:00:27.050
+project to use solar energy to power our devices
+during the whole year. If we want to do so,
+
+0:00:27.050,0:00:33.460
+we have to answer the following questions:
+What size the solar panel has to be in order
+
+0:00:33.460,0:00:40.859
+to power our device
+What size of battery we need to survive times
+
+0:00:40.859,0:00:46.710
+without sun?
+These questions lead to the next row of questions:
+
+0:00:46.710,0:00:53.179
+How much energy can we harvest in one year?
+How much energy does our device use during
+
+0:00:53.179,0:00:57.800
+this year?
+How is the energy distributed throughout the
+
+0:00:57.800,0:01:03.870
+day and through the year?
+How long do we want to survive with reduced
+
+0:01:03.870,0:01:10.140
+or without sun?
+Many questions. So, let’s start! But wait:
+
+0:01:10.140,0:01:18.829
+A I have to warn you! This will not be easy
+stuff. But saving the planet with green energy
+
+0:01:18.829,0:01:24.979
+will never be easy!
+We will use a simple design: A solar panel,
+
+0:01:24.979,0:01:31.700
+a “charging unit”, a battery, and our
+ESP8266
+
+0:01:31.700,0:01:38.760
+How much energy can we harvest in one year?
+This depends mainly on three factors:
+
+0:01:38.760,0:01:45.280
+The location where your solar panel is placed
+(and its direction towards the sun)
+
+0:01:45.280,0:01:51.200
+The size of the panel
+The efficiency of your circuit to transfer
+
+0:01:51.200,0:01:56.520
+solar energy to your ESP
+The “location question” can be answered
+
+0:01:56.520,0:02:04.280
+by looking at this map. If you want to know
+it more precise, you can go to the “solargis.com”
+
+0:02:04.280,0:02:14.599
+page: I live near Basel and we get about 1200
+kWh/m2.of solar energy per year.
+
+0:02:14.599,0:02:22.830
+What does this mean in relation to run a ESP8266
+without deep sleep, which uses about 100 mA
+
+0:02:22.830,0:02:33.090
+on 3.3 volt, which equals 0.33W?
+The year has 8760 hours. If we divide the
+
+0:02:33.090,0:02:48.080
+yearly energy by these hours, we get the Watts:
+1200 kWh/8760 h equals 137Watt/ m2. This is
+
+0:02:48.080,0:02:55.250
+the total radiation from the sun. Unfortunately,
+solar cells only have an efficiency of about
+
+0:02:55.250,0:03:03.871
+15%. So, we get about 20 W/ m2 out of the
+solar cell. This is further reduced by the
+
+0:03:03.871,0:03:09.900
+efficiency of our charging device and the
+loss of the battery charging process. Let’s
+
+0:03:09.900,0:03:22.840
+assume, we lose another 33%. Then, we get
+a usable energy of only 14W/ m2 or 1.4 mW/
+
+0:03:22.840,0:03:32.750
+cm2, because 1m2=10’000cm2.
+With these two numbers, we can calculate the
+
+0:03:32.750,0:03:48.709
+size of the needed panel: 0.33/14 = 236cm2,
+which is around 15 x 15 cm. So, this panel
+
+0:03:48.709,0:03:55.290
+should be sufficient to power my ESP8266 the
+whole year round. Great!
+
+0:03:55.290,0:04:02.580
+But, let’s quickly calculate the other way
+around: The supplier of this panel writes,
+
+0:04:02.580,0:04:12.510
+that it delivers 4.5 watt. And our ESP only
+needs 0.33 watt. This is a big difference.
+
+0:04:12.510,0:04:19.690
+So, do you know, where I made the error in
+my calculation? You do not find an error?
+
+0:04:19.690,0:04:26.250
+You are right: There is no error (at least,
+that is, what I hope), just an additional
+
+0:04:26.250,0:04:33.520
+problem: The sun does not shine all the time.
+It fluctuates during each day, and also over
+
+0:04:33.520,0:04:41.370
+the month. And the specifications of the panel
+only show us the peak power, and not in Switzerland,
+
+0:04:41.370,0:04:49.330
+but somewhere else with lots of sun! And maybe
+it is even a little bit exaggerated, as usual
+
+0:04:49.330,0:04:55.781
+with the specs on Aliexpress…
+We have to continue our calculations. But
+
+0:04:55.781,0:05:01.710
+because this is boring, and the sun shines
+outside, we first do some tests:
+
+0:05:01.710,0:05:08.770
+I bought a couple of small solar panels and
+one bigger one and want to do some tests now.
+
+0:05:08.770,0:05:14.840
+The test setup is simple: I place the solar
+panel into the sun and connect it to my new
+
+0:05:14.840,0:05:19.620
+electronic load.
+An electronic load is a simple device: It
+
+0:05:19.620,0:05:25.229
+behaves like a variable resistor plus a voltage
+and an Ampere meter.
+
+0:05:25.229,0:05:30.759
+The only difference is, that an electronic
+load automatically adjusts the resistor to
+
+0:05:30.759,0:05:38.449
+either a constant current, a constant voltage,
+or a constant power. And it automatically
+
+0:05:38.449,0:05:44.250
+calculates and displays the power, which is
+handy for these experiments.
+
+0:05:44.250,0:05:49.979
+Filming today is not easy, but I hope, you
+can see the numbers. I start without any load
+
+0:05:49.979,0:05:56.870
+and measure the “open voltage” of the
+solar cell of 6.5volts. If I start to draw
+
+0:05:56.870,0:06:02.860
+current, we see, that the power increases
+while the voltage drops a little. Suddenly,
+
+0:06:02.860,0:06:08.850
+the voltage drops and we lose most of the
+power. If I try again with smaller steps,
+
+0:06:08.850,0:06:17.620
+we see, that we can draw a maximum current
+of about 550 mA and get 2.8 Watt output. As
+
+0:06:17.620,0:06:24.139
+soon as I draw more current, the voltage drops
+dramatically. Why is that?
+
+0:06:24.139,0:06:31.840
+This is a characteristic of Solar Panels.
+Here is the result of my measurements of the
+
+0:06:31.840,0:06:39.539
+16x16cm panel, and here is the theoretical
+curve. They match pretty good in shape.
+
+0:06:39.539,0:06:48.580
+And here, you see the expression MPP, or maximum
+power point. In order to get maximum power
+
+0:06:48.580,0:06:56.300
+out of the panel, we always have to operate
+at this point. Unfortunately, this point moves
+
+0:06:56.300,0:07:03.050
+if the lighting conditions of the panel change
+and we have to find it again. There are special
+
+0:07:03.050,0:07:12.490
+devices available which do exactly that. They
+are called MPPT or maximum power point trackers.
+
+0:07:12.490,0:07:19.110
+I will look at this topic in a future video.
+You can buy monocrystalline or polycrystalline
+
+0:07:19.110,0:07:27.330
+cells or panels. Monocrystalline silicon is
+used for most our electronic chips, and panels
+
+0:07:27.330,0:07:33.610
+made from this material, theoretically have
+a higher efficiency, which means, they should
+
+0:07:33.610,0:07:40.520
+produce more electricity with a defined light
+intensity. They should also be more expensive
+
+0:07:40.520,0:07:46.770
+than Polycrystalline modules. In reality,
+the differences are small and we should not
+
+0:07:46.770,0:07:51.680
+bother too much about that.
+You can easily see the difference between
+
+0:07:51.680,0:07:57.580
+mono or poly modules, as they are usually
+called: The mono modules are darker, nearly
+
+0:07:57.580,0:08:03.449
+black and the polys are grey.
+You find the results of a sunny Sunday afternoon
+
+0:08:03.449,0:08:09.919
+work in this chart. Be aware that the results
+are not completely dependable since smallest
+
+0:08:09.919,0:08:17.250
+clouds can have an influence and I had to
+do my measurements in series , not in parallel.
+
+0:08:17.250,0:08:22.690
+And in the middle, I had to make a stop to
+drink a beer, because the weather was really
+
+0:08:22.690,0:08:27.860
+hot…
+We see, that I got a power per cm2 between
+
+0:08:27.860,0:08:35.140
+5 and 10 mW. We also have to consider, that
+not the whole area of the panel is used to
+
+0:08:35.140,0:08:41.540
+convert light. There are also areas for connecting
+the different cells, because one cell only
+
+0:08:41.540,0:08:48.760
+produces around 0.5 volts.
+So far, we know how much energy we can harvest
+
+0:08:48.760,0:08:54.500
+over the whole year, and also during a sunny
+day. Let’s now continue to find out the
+
+0:08:54.500,0:09:01.130
+real size of the needed panel, and the size
+of the battery big enough to power our ESP
+
+0:09:01.130,0:09:07.290
+safely during the whole year.
+Here in Basel, we get 2.6 times less solar
+
+0:09:07.290,0:09:14.400
+irradiance in December than in July. And the
+sun disappears every night for a few hours.
+
+0:09:14.400,0:09:20.910
+And, especially in winter, we experience bad
+weather and sometimes, we do not see the sun
+
+0:09:20.910,0:09:25.920
+for days.
+This creates three additional problems for
+
+0:09:25.920,0:09:30.650
+our project:
+Make sure, our device survives the long winter
+
+0:09:30.650,0:09:35.270
+nights
+Make sure, our device survives a period of
+
+0:09:35.270,0:09:41.140
+bad weather without sun
+and make sure, our device survives the whole
+
+0:09:41.140,0:09:46.210
+month of December
+Of course, these problems differ in different
+
+0:09:46.210,0:09:52.621
+location. This is, why I show the formulas
+and the sources of my data. With this, you
+
+0:09:52.621,0:09:58.360
+should be able to make your own calculations.
+The first problem can be solved with a battery,
+
+0:09:58.360,0:10:04.320
+which is charged during the day and discharged
+during night. Let’s quickly calculate the
+
+0:10:04.320,0:10:13.040
+size of this battery for December.
+Day length is about 8.5h and night therefore
+
+0:10:13.040,0:10:27.350
+15.5h. So, our battery has to be: 15.5h x
+0.1A= 1.6 Ah. This is less than the capacity
+
+0:10:27.350,0:10:33.370
+of a 18650 cell.
+Now the second problem: If we assume bad weather
+
+0:10:33.370,0:10:46.350
+without sun for 2 weeks, we need a bigger
+battery: 14 daysx24hx0.1A=34 Ah. Here, we
+
+0:10:46.350,0:10:54.310
+need about 14 18650 cells in parallel.
+If this is the worst case, we know now the
+
+0:10:54.310,0:11:01.130
+size of the battery. The next thing is the
+calculation of the size of the solar panel.
+
+0:11:01.130,0:11:06.690
+We can assume, that the bad weather conditions
+are included in our average values for a particular
+
+0:11:06.690,0:11:14.170
+location. So, we can design our solar panel
+for the worst month of the year. We take our
+
+0:11:14.170,0:11:24.210
+1.62 kWh/m2 per day average solar energy for
+December, divide it by 24h, and multiply it
+
+0:11:24.210,0:11:32.460
+by the 10% to get the electrical energy. It
+is 6.7W/m2
+
+0:11:32.460,0:11:42.260
+Because we need 0.33W, we need a solar panel
+of 448 cm2 to harvest enough energy to drive
+
+0:11:42.260,0:11:49.040
+our device throughout December. These numbers
+are for an average year. But these days, we
+
+0:11:49.040,0:11:55.740
+never have average years. So, maybe we have
+to add a little to account for that and we
+
+0:11:55.740,0:12:06.930
+end up with a panel size of 25x25cm which
+equals 625 cm2. Pretty big!
+
+0:12:06.930,0:12:14.670
+So, to summarize, we can make the same calculation
+for Dubai, were it is quite hot in summer.
+
+0:12:14.670,0:12:25.890
+First, we search the radiation per m2 for
+the worst month of the year. It is 3.68 kWh/m2/day.
+
+0:12:25.890,0:12:34.750
+Then, we divide this value by 242, and divide
+the power needs of our device by this number,
+
+0:12:34.750,0:12:42.890
+and we get the size of our panel: 197 cm^2.
+The battery size can be smaller, because we
+
+0:12:42.890,0:12:50.960
+do not need to anticipate 14 days of consecutive
+bad weather. Let’s assume 5 days. The day
+
+0:12:50.960,0:12:59.170
+is10.5 hours long and therefore, the night,
+13.5h. So, the size of the battery is only
+
+0:12:59.170,0:13:06.910
+12 Ah, which is about 5 18650 cells.
+Some of you might remember my videos about
+
+0:13:06.910,0:13:15.160
+sleep modes. If we are able to reduce the
+power consumption of our device by a factor
+
+0:13:15.160,0:13:24.100
+of 10, our battery size is reduced to one
+18650 for Switzerland, and our solar panel
+
+0:13:24.100,0:13:32.340
+to the size of 10x10 cm. And if we would be
+able to reduce power consumption even more,
+
+0:13:32.340,0:13:38.680
+for example by using LoRa instead of WiFi,
+the battery and the panel size would be reduced
+
+0:13:38.680,0:13:45.001
+even more. Great!
+Today, we calculated the size of a solar panel
+
+0:13:45.001,0:13:50.680
+and the battery for a year-long usage. In
+one of the next videos we have to concentrate
+
+0:13:50.680,0:13:55.240
+on the charging device between the Solar panel
+and the ESP.
+
+0:13:55.240,0:14:03.070
+This device has to fulfill quite some needs:
+Find and keep the MPP under all lighting conditions
+
+0:14:03.070,0:14:10.740
+to get maximum power from the solar panel
+Make sure, we have a constant voltage of 3.3
+
+0:14:10.740,0:14:16.050
+volt for the ESP
+Switch charging of battery off if it reaches
+
+0:14:16.050,0:14:22.930
+4.2 volts. This is particularly important
+because we had to design the solar panel for
+
+0:14:22.930,0:14:30.420
+the worst month of the year. In all other
+months, we will have far too much energy
+
+0:14:30.420,0:14:38.330
+Protect the battery from too low voltage
+Signal low voltage to the ESP in order to
+
+0:14:38.330,0:14:44.150
+make it possible react accordingly. E.g. send
+a message out
+
+0:14:44.150,0:14:49.740
+I hope, this video was useful or at least
+interesting for you. If true, then like. Bye
