@@ -1,0 +1,1197 @@
+0:00:00.030,0:00:05.970
+Grüezi youtubers here is the guy with the
+
+0:00:02.820,0:00:11.460
+Swiss accent with a new episode around
+
+0:00:05.970,0:00:17.220
+sensors and microcontrollers a new
+
+0:00:11.460,0:00:21.650
+mailbag all hand checked in Switzerland
+
+0:00:17.220,0:00:26.189
+it means that it's free of charge our
+
+0:00:21.650,0:00:30.240
+limitation for the customs is about 60
+
+0:00:26.189,0:00:35.219
+Swiss francs is a free of duty and free
+
+0:00:30.240,0:00:37.950
+of we 80 and usually these packages
+
+0:00:35.219,0:00:43.890
+anyway are declared only five dollars or
+
+0:00:37.950,0:00:46.620
+so or even a gift so let's start I have
+
+0:00:43.890,0:00:50.930
+some of them already prepared so I don't
+
+0:00:46.620,0:00:50.930
+need my Swiss Army knife too much today
+
+0:00:54.230,0:01:11.369
+these are very nice power supplies 3.3
+
+0:01:04.199,0:01:16.290
+volt 3 watt and the input is 100 to 240
+
+0:01:11.369,0:01:21.330
+volt AC and 3 watt means 1 ampere these
+
+0:01:16.290,0:01:27.210
+are well suited for most of the small
+
+0:01:21.330,0:01:31.200
+gadgets and this one is 5 volt also 3
+
+0:01:27.210,0:01:34.170
+watt a little bit less than 1 ampere but
+
+0:01:31.200,0:01:37.619
+still ok for many many applications and
+
+0:01:34.170,0:01:40.290
+they are very nicely done so you have a
+
+0:01:37.619,0:01:42.890
+clear separation between high voltage
+
+0:01:40.290,0:01:46.500
+and low voltage if you solder it on a
+
+0:01:42.890,0:01:48.960
+PCB you can clearly separate the
+
+0:01:46.500,0:01:52.500
+dangerous zone from the not dangerous
+
+0:01:48.960,0:01:55.490
+zone so I quickly want to test out the
+
+0:01:52.500,0:02:00.899
+quality of these power supplies and
+
+0:01:55.490,0:02:03.899
+people who watch my mailbox know that I
+
+0:02:00.899,0:02:07.079
+got a insulation tester in one of my
+
+0:02:03.899,0:02:10.200
+last videos and I want to use this now
+
+0:02:07.079,0:02:13.300
+to check out if the insulation between
+
+0:02:10.200,0:02:17.320
+the primary and the secondary is
+
+0:02:13.300,0:02:19.780
+hi enough and because this is the first
+
+0:02:17.320,0:02:25.330
+time I use this device I just want to
+
+0:02:19.780,0:02:30.870
+check it out quickly to do that I use
+
+0:02:25.330,0:02:40.780
+just an ordinary multimeter and I
+
+0:02:30.870,0:02:45.010
+connect the two wires like that and now
+
+0:02:40.780,0:02:48.580
+I connected it to these two blocks here
+
+0:02:45.010,0:02:52.450
+and I selected now 250 volt what I
+
+0:02:48.580,0:02:55.570
+expect is that we will get 250 volt
+
+0:02:52.450,0:02:59.200
+across this and we will see the
+
+0:02:55.570,0:03:02.350
+resistance of this multimeter shown here
+
+0:02:59.200,0:03:09.610
+in the display so I press the button
+
+0:03:02.350,0:03:16.170
+test and we see 250 volt exactly and
+
+0:03:09.610,0:03:19.930
+here exactly 10 mega ohm so this
+
+0:03:16.170,0:03:23.140
+multimeter is capable to deal with 250
+
+0:03:19.930,0:03:27.010
+volt it's even should be able to deal
+
+0:03:23.140,0:03:30.130
+with 1000 volts but I will not do that I
+
+0:03:27.010,0:03:32.110
+will stop at 500 volt and usually these
+
+0:03:30.130,0:03:35.950
+kind of multimeters have any input
+
+0:03:32.110,0:03:38.700
+resistance of about 10 mega ohm so I
+
+0:03:35.950,0:03:42.910
+think it's quite spot-on
+
+0:03:38.700,0:03:47.680
+the only issue is that I get minus 250
+
+0:03:42.910,0:03:51.250
+volt which is somehow strange and these
+
+0:03:47.680,0:03:55.840
+two probably I have to check maybe yeah
+
+0:03:51.250,0:04:05.440
+I know why this is earth and this is
+
+0:03:55.840,0:04:09.550
+life e and L you see it here so RTFM
+
+0:04:05.440,0:04:17.680
+read the fucking manual anyway now it
+
+0:04:09.550,0:04:22.230
+should be okay 250 volt and we have the
+
+0:04:17.680,0:04:22.230
+250 volt 500 volt
+
+0:04:22.560,0:04:30.770
+we have the 497 volt which is very
+
+0:04:25.920,0:04:35.480
+accurate and 9.9 mega ohm resistance
+
+0:04:30.770,0:04:42.600
+perfect and now I try to kill this
+
+0:04:35.480,0:04:47.880
+device here and to do so I put one wire
+
+0:04:42.600,0:04:55.710
+to the secondary and one wire to the
+
+0:04:47.880,0:05:00.900
+primary so I hope so I hope you can see
+
+0:04:55.710,0:05:06.450
+it now so now what I do is I apply 250
+
+0:05:00.900,0:05:11.910
+volt across the whole power supply this
+
+0:05:06.450,0:05:14.790
+simulates the worst case that the 220
+
+0:05:11.910,0:05:17.580
+volt or 110 volt or whatever you have on
+
+0:05:14.790,0:05:21.660
+the primary that it comes through to the
+
+0:05:17.580,0:05:26.400
+secondary and kills all our circuits now
+
+0:05:21.660,0:05:28.979
+I expect very high resistance here
+
+0:05:26.400,0:05:32.850
+between primary and secondary it should
+
+0:05:28.979,0:05:37.110
+be extremely high and this is also why I
+
+0:05:32.850,0:05:43.340
+choose not make home but geek ohm and I
+
+0:05:37.110,0:05:46.760
+start with 250 volt and now maybe I kill
+
+0:05:43.340,0:05:53.330
+this power supply
+
+0:05:46.760,0:06:00.900
+no it's wife's indefinite very high
+
+0:05:53.330,0:06:07.289
+resistance so with 500 volt do the same
+
+0:06:00.900,0:06:10.289
+thing again very high resistance so
+
+0:06:07.289,0:06:12.300
+there is no danger in this configuration
+
+0:06:10.289,0:06:16.080
+of course I have to do all the other
+
+0:06:12.300,0:06:21.990
+configurations also but then I'm sure
+
+0:06:16.080,0:06:25.400
+that this device is completely isolated
+
+0:06:21.990,0:06:28.580
+from the primary to the secondary this
+
+0:06:25.400,0:06:28.580
+next one
+
+0:06:34.910,0:06:41.840
+these are five millimeter by five
+
+0:06:38.160,0:06:45.690
+millimeter or fifty-fifty and these are
+
+0:06:41.840,0:06:48.300
+35 by 35 so they are smaller but the
+
+0:06:45.690,0:06:51.000
+same principle and I learned from
+
+0:06:48.300,0:06:54.540
+Charles lore that these should have
+
+0:06:51.000,0:06:57.330
+really nice-looking yellow yellow color
+
+0:06:54.540,0:07:01.080
+very special ones by the way
+
+0:06:57.330,0:07:04.220
+Joel's lure is a very good channel and
+
+0:07:01.080,0:07:06.840
+you find it in my favourites
+
+0:07:04.220,0:07:10.320
+unfortunately I discovered that there
+
+0:07:06.840,0:07:13.560
+are many different SK 68 12 neopixels
+
+0:07:10.320,0:07:15.900
+and it was not sufficient to just order
+
+0:07:13.560,0:07:20.550
+a bunch of them the ones I thought were
+
+0:07:15.900,0:07:23.730
+just normal neopixels like the ws2812 B
+
+0:07:20.550,0:07:27.030
+with only three channels red green and
+
+0:07:23.730,0:07:30.660
+blue you get however these neopixels
+
+0:07:27.030,0:07:35.790
+with four channels but also not the ones
+
+0:07:30.660,0:07:39.930
+Charles mentioned they are RGB and warm
+
+0:07:35.790,0:07:42.480
+or cold white so I went back to Charles
+
+0:07:39.930,0:07:46.650
+video and discovered a link where he
+
+0:07:42.480,0:07:50.490
+sells these special RGB yellow neopixels
+
+0:07:46.650,0:07:52.860
+they are now in the mail by the way you
+
+0:07:50.490,0:07:56.180
+also need a different library to drive
+
+0:07:52.860,0:08:01.110
+these parts link is in the description
+
+0:07:56.180,0:08:05.660
+the next one is already opened because I
+
+0:08:01.110,0:08:05.660
+had to confirm delivery
+
+0:08:07.990,0:08:26.710
+few things I think from banggood two
+
+0:08:16.030,0:08:28.509
+very ordinary Arduino clones because I
+
+0:08:26.710,0:08:33.209
+have a young guy helping me out
+
+0:08:28.509,0:08:36.219
+sometimes and I need it just an ordinary
+
+0:08:33.209,0:08:39.729
+Arduino to give it to him that he can
+
+0:08:36.219,0:08:44.200
+start his hobby a little bit so normal
+
+0:08:39.729,0:08:47.110
+thing and I ordered three of them they
+
+0:08:44.200,0:08:53.200
+are dirt cheap I don't remember how much
+
+0:08:47.110,0:08:57.160
+and for him I also ordered a housing for
+
+0:08:53.200,0:09:02.110
+the Arduino and acrylic housing so it
+
+0:08:57.160,0:09:05.380
+will have a nice a nice look I peeled
+
+0:09:02.110,0:09:09.209
+now all the protection off which is
+
+0:09:05.380,0:09:13.690
+quite a work and that even got a nice
+
+0:09:09.209,0:09:17.079
+manual with it so I think I will be able
+
+0:09:13.690,0:09:21.959
+to put it together it says you have to
+
+0:09:17.079,0:09:25.720
+start with board two and board one but
+
+0:09:21.959,0:09:27.700
+you have many possibilities to put it
+
+0:09:25.720,0:09:33.190
+together so you have to pay attention
+
+0:09:27.700,0:09:36.190
+the Arduino 's have here two holes which
+
+0:09:33.190,0:09:39.399
+are closer than here and you see also
+
+0:09:36.190,0:09:41.620
+the holes here and then you know exactly
+
+0:09:39.399,0:09:45.250
+how you have to position it that is the
+
+0:09:41.620,0:09:46.149
+trick if you get this done then the race
+
+0:09:45.250,0:09:51.100
+will follow
+
+0:09:46.149,0:09:53.970
+so hours later no not really but it's a
+
+0:09:51.100,0:09:56.890
+it's a not easy to to put all these
+
+0:09:53.970,0:10:00.279
+small screws in but now it's nicely
+
+0:09:56.890,0:10:03.250
+looking and I still have this one which
+
+0:10:00.279,0:10:06.610
+is spare somehow but it's nice he will
+
+0:10:03.250,0:10:08.500
+like it I think and this was also in the
+
+0:10:06.610,0:10:13.050
+same package
+
+0:10:08.500,0:10:18.900
+and this is something quite important
+
+0:10:13.050,0:10:23.620
+this is to clean the soldering iron and
+
+0:10:18.900,0:10:27.390
+there are two different sorts to be
+
+0:10:23.620,0:10:29.980
+bought one are of steel and one is brass
+
+0:10:27.390,0:10:32.860
+personally I do not like it all the
+
+0:10:29.980,0:10:36.550
+steel one the steel wool this is also I
+
+0:10:32.860,0:10:39.550
+think quite a cheap thing and I like
+
+0:10:36.550,0:10:41.290
+much more this brass one and it has to
+
+0:10:39.550,0:10:46.690
+be replaced from time to time because
+
+0:10:41.290,0:10:50.740
+the solder really sticks into it and I
+
+0:10:46.690,0:10:52.990
+have it here so I can clean my soldering
+
+0:10:50.740,0:10:55.360
+iron it's always important that you have
+
+0:10:52.990,0:10:58.210
+it on your desk somewhere so pay
+
+0:10:55.360,0:11:01.320
+attention that you get the brass one and
+
+0:10:58.210,0:11:06.010
+not the steel one and this is a gadget
+
+0:11:01.320,0:11:08.950
+quite an interesting principle you write
+
+0:11:06.010,0:11:11.350
+something here or you draw something and
+
+0:11:08.950,0:11:16.360
+then if you want to raise it you have
+
+0:11:11.350,0:11:19.930
+here the areason button so like that you
+
+0:11:16.360,0:11:25.290
+write something I hope you see it and
+
+0:11:19.930,0:11:29.230
+then press the button and it's a way I'm
+
+0:11:25.290,0:11:32.470
+not sure how this works it does not look
+
+0:11:29.230,0:11:36.700
+like it has a battery or at least it is
+
+0:11:32.470,0:11:39.520
+no replaceable battery but it's a nice
+
+0:11:36.700,0:11:43.060
+thing if you can note for example an IP
+
+0:11:39.520,0:11:45.130
+address of your ESPE or something like
+
+0:11:43.060,0:11:47.950
+that or at least you want to do today
+
+0:11:45.130,0:11:55.090
+and then at the evening if you did it
+
+0:11:47.950,0:11:57.480
+you just use it and the pen is here next
+
+0:11:55.090,0:11:57.480
+one
+
+0:12:00.089,0:12:10.329
+this is for my solar project maybe I
+
+0:12:06.269,0:12:14.250
+ordered a few charging units and this
+
+0:12:10.329,0:12:19.690
+one is charging unit and here you can
+
+0:12:14.250,0:12:23.230
+put the 18 650 battery and then you can
+
+0:12:19.690,0:12:25.600
+charge it here with 5 volts or more and
+
+0:12:23.230,0:12:28.720
+here you can discharge it or vice versa
+
+0:12:25.600,0:12:31.180
+maybe I can use this for my solar
+
+0:12:28.720,0:12:34.389
+controller because obviously should have
+
+0:12:31.180,0:12:37.720
+also a protection and everything for it
+
+0:12:34.389,0:12:41.380
+for the lipo battery here this is a part
+
+0:12:37.720,0:12:45.579
+of a normal power bank for the next one
+
+0:12:41.380,0:12:49.660
+I do not need my knife because I already
+
+0:12:45.579,0:12:58.750
+opened it to have a look and this is a
+
+0:12:49.660,0:13:03.069
+lot of stuff here oh this is not very
+
+0:12:58.750,0:13:08.370
+well packaged one of them is open
+
+0:13:03.069,0:13:12.130
+obviously so normal Remus
+
+0:13:08.370,0:13:16.389
+another way is MOS and I think it should
+
+0:13:12.130,0:13:22.300
+be 1/3 1/3 we must just to start to
+
+0:13:16.389,0:13:25.360
+stock up my we MOS boards and these are
+
+0:13:22.300,0:13:27.760
+original we mas here with the most sign
+
+0:13:25.360,0:13:32.589
+or at least I hope they are originally
+
+0:13:27.760,0:13:41.740
+Mo's but now there are more interesting
+
+0:13:32.589,0:13:47.350
+things here we have a new ESP 32 board
+
+0:13:41.740,0:13:49.980
+and this one has also lipo charging and
+
+0:13:47.350,0:13:55.029
+everything and you should be able to
+
+0:13:49.980,0:14:04.000
+connect the lipo battery here and this
+
+0:13:55.029,0:14:09.710
+one is another ESP 32 port this one does
+
+0:14:04.000,0:14:22.190
+not have the lipo charging thing and the
+
+0:14:09.710,0:14:25.340
+in a third one also an ESP 32 but like
+
+0:14:22.190,0:14:30.680
+the we Mo's very small but I think it's
+
+0:14:25.340,0:14:36.920
+a slightly different format and by the
+
+0:14:30.680,0:14:44.480
+way it has two buttons here the next one
+
+0:14:36.920,0:14:48.050
+here is also an ESP 32 but this is a
+
+0:14:44.480,0:14:53.330
+rolling board and it has also a lipo
+
+0:14:48.050,0:14:57.020
+support it seems to be from Windows but
+
+0:14:53.330,0:15:03.410
+I'm not sure but anyway it's important
+
+0:14:57.020,0:15:09.320
+that it is an ESP 32 and you know now
+
+0:15:03.410,0:15:13.760
+what the plan is I think I will do an
+
+0:15:09.320,0:15:17.360
+overview about the newest boards in the
+
+0:15:13.760,0:15:20.690
+ESP 32 area and this is the last one in
+
+0:15:17.360,0:15:29.930
+this package and this seems to be a
+
+0:15:20.690,0:15:36.280
+quite interesting one because this one
+
+0:15:29.930,0:15:40.040
+has an O LED display right on the board
+
+0:15:36.280,0:15:42.560
+it had does not have too many pins this
+
+0:15:40.040,0:15:45.410
+is this might be a problem in some
+
+0:15:42.560,0:15:48.530
+projects but if you want to do some data
+
+0:15:45.410,0:15:52.760
+locking or stuff like that that seems to
+
+0:15:48.530,0:15:54.710
+be an interesting board that is why it
+
+0:15:52.760,0:15:59.030
+has also the Wii mote sign on it I'm
+
+0:15:54.710,0:16:03.110
+really not sure so we have now plenty of
+
+0:15:59.030,0:16:07.120
+ESP 32 stuff to start with an overview
+
+0:16:03.110,0:16:11.660
+about the new boards and these are also
+
+0:16:07.120,0:16:18.040
+interesting boards they are the same
+
+0:16:11.660,0:16:18.040
+these are signal generators ad
+
+0:16:18.130,0:16:23.580
+9850 and they can produce a variable
+
+0:16:22.940,0:16:26.760
+frequency
+
+0:16:23.580,0:16:29.640
+is and I used one of these in my hack of
+
+0:16:26.760,0:16:33.600
+the garage door opener and I want to
+
+0:16:29.640,0:16:38.010
+produce an additional opener to be put
+
+0:16:33.600,0:16:44.030
+in my car I nearly forgot this one this
+
+0:16:38.010,0:16:50.340
+is an mp3 player and with an SD card and
+
+0:16:44.030,0:17:03.250
+I might use this to give one of my
+
+0:16:50.340,0:17:10.310
+devices a voice output next one in
+
+0:17:03.250,0:17:14.670
+stuff here and if we open this one first
+
+0:17:10.310,0:17:20.430
+[Applause]
+
+0:17:14.670,0:17:27.780
+this is an other ESP 32 board obviously
+
+0:17:20.430,0:17:31.300
+also from Remus and this has a 86 18 650
+
+0:17:27.780,0:17:35.860
+battery which can be put in here and it
+
+0:17:31.300,0:17:38.560
+has quite a lot of pins here and of
+
+0:17:35.860,0:17:41.110
+course it needs an on/off switch if you
+
+0:17:38.560,0:17:44.170
+have a battery here and it seems also to
+
+0:17:41.110,0:17:50.410
+have a charger here with this inductive
+
+0:17:44.170,0:17:54.930
+'ti and and serial to USB converter very
+
+0:17:50.410,0:18:07.150
+nice port is also part of the review
+
+0:17:54.930,0:18:14.710
+next one this is a arduino shield but it
+
+0:18:07.150,0:18:18.670
+has a esp8266 on board and it is a ESP
+
+0:18:14.710,0:18:21.460
+13 shield from do it and the purpose of
+
+0:18:18.670,0:18:25.600
+this shield seems to be that you can
+
+0:18:21.460,0:18:28.210
+Wi-Fi enable a arduino a normal arduino
+
+0:18:25.600,0:18:30.340
+board and i just wanted to try if this
+
+0:18:28.210,0:18:34.150
+work because sometimes you need more
+
+0:18:30.340,0:18:36.970
+than a few pins and then the Arduino arm
+
+0:18:34.150,0:18:40.960
+operator or also if you need more than
+
+0:18:36.970,0:18:44.200
+only one ADC then it's also good to use
+
+0:18:40.960,0:18:47.650
+an Arduino but quite often these days I
+
+0:18:44.200,0:18:55.900
+want to have a connectivity and so this
+
+0:18:47.650,0:19:01.110
+is probably a good compromise I think
+
+0:18:55.900,0:19:05.620
+this one belongs also to the last one it
+
+0:19:01.110,0:19:08.010
+has it is a shield to the ESP 32 we had
+
+0:19:05.620,0:19:12.280
+before it has also these pins here and
+
+0:19:08.010,0:19:12.640
+it is called ex shield so the format is
+
+0:19:12.280,0:19:15.370
+called
+
+0:19:12.640,0:19:16.809
+ex it's not the we Mo's the we MOS is
+
+0:19:15.370,0:19:20.110
+small is
+
+0:19:16.809,0:19:23.169
+over here is not as wide as SDX
+
+0:19:20.110,0:19:28.179
+but we will see I think I should get
+
+0:19:23.169,0:19:32.379
+also the ground plane for these and here
+
+0:19:28.179,0:19:38.320
+we have another X shield
+
+0:19:32.379,0:19:41.289
+I think yep so you see this is a proto
+
+0:19:38.320,0:19:43.659
+board but it has the same size it's the
+
+0:19:41.289,0:19:47.080
+same idea of the way most shields you
+
+0:19:43.659,0:19:53.519
+can stack them the next one is already
+
+0:19:47.080,0:19:58.240
+opened it is extensions for Raspberry Pi
+
+0:19:53.519,0:20:00.970
+GPIO pins for the header so I can
+
+0:19:58.240,0:20:04.840
+connect this to the raspberry and then I
+
+0:20:00.970,0:20:09.669
+can connect this to my project board the
+
+0:20:04.840,0:20:12.720
+next one also is already open it's also
+
+0:20:09.669,0:20:12.720
+from banggood
+
+0:20:14.230,0:20:22.120
+it is a electrical parameter tester and
+
+0:20:19.820,0:20:27.770
+what it really is
+
+0:20:22.120,0:20:30.950
+it measures vault and ampere and also
+
+0:20:27.770,0:20:35.210
+calculates the power because I do some
+
+0:20:30.950,0:20:38.440
+experiments with solar panels I think
+
+0:20:35.210,0:20:43.160
+this can be nice addition to my
+
+0:20:38.440,0:20:48.020
+electronic load of course it comes with
+
+0:20:43.160,0:20:52.900
+a description and the description is
+
+0:20:48.020,0:20:57.560
+also in English I print it now a nice
+
+0:20:52.900,0:21:00.590
+box put in a 9-volt battery it should
+
+0:20:57.560,0:21:04.250
+run about 50 hours with this with this
+
+0:21:00.590,0:21:11.870
+battery here and switch I can switch it
+
+0:21:04.250,0:21:18.940
+on here and now you see and now you see
+
+0:21:11.870,0:21:22.850
+Walt ampere and so on input output
+
+0:21:18.940,0:21:25.460
+voltage sense I will explain why we need
+
+0:21:22.850,0:21:29.090
+this voltage sense in my video about
+
+0:21:25.460,0:21:34.490
+electronic loads so let's just check it
+
+0:21:29.090,0:21:38.840
+out I connect five volts to the input
+
+0:21:34.490,0:21:48.860
+and the small electronic USB load to the
+
+0:21:38.840,0:21:53.270
+output and now we already see the 1
+
+0:21:48.860,0:21:57.020
+ampere flowing and the voltage sends to
+
+0:21:53.270,0:22:01.150
+the input for example here we have 4
+
+0:21:57.020,0:22:06.280
+point 9 5 volt 1 amp ere for what two
+
+0:22:01.150,0:22:09.110
+minutes operation it's 30 degrees maybe
+
+0:22:06.280,0:22:11.500
+inside the cut the housing outside it's
+
+0:22:09.110,0:22:16.010
+a little bit less and it counts here
+
+0:22:11.500,0:22:20.090
+ampere iris and what iris and I can
+
+0:22:16.010,0:22:25.450
+reset these waters and ampere hours if I
+
+0:22:20.090,0:22:25.450
+press the small button
+
+0:22:26.280,0:22:32.700
+now it's zero this is a very nice device
+
+0:22:30.060,0:22:35.460
+here and it's absolutely worth the money
+
+0:22:32.700,0:22:47.400
+will be very handy in my solar panel
+
+0:22:35.460,0:22:52.590
+test next one this is a B and O 0:55
+
+0:22:47.400,0:22:56.490
+chip from Bosch and this is one of the
+
+0:22:52.590,0:23:00.050
+newer acceleration sensors and it
+
+0:22:56.490,0:23:03.030
+obviously has also already a
+
+0:23:00.050,0:23:06.180
+microprocessor on the chip and it should
+
+0:23:03.030,0:23:09.030
+be much easier to read the annals and
+
+0:23:06.180,0:23:12.540
+all the stuff from this one you do not
+
+0:23:09.030,0:23:16.140
+have to deal with quad tear neons or
+
+0:23:12.540,0:23:19.440
+whatever to get your self balancing
+
+0:23:16.140,0:23:22.680
+robot or whatever I hope I can use this
+
+0:23:19.440,0:23:27.060
+one here for a new version of my self
+
+0:23:22.680,0:23:31.860
+balancing robot this is the old version
+
+0:23:27.060,0:23:35.250
+here with which has a quadcopter board
+
+0:23:31.860,0:23:42.210
+here and for communication it has an n
+
+0:23:35.250,0:23:46.160
+RF 24:01 and I would like to build or to
+
+0:23:42.210,0:23:53.160
+rebuild one of these but with an ESP and
+
+0:23:46.160,0:23:59.130
+with this sensor here and with blink as
+
+0:23:53.160,0:24:04.710
+a remote control we will see next one is
+
+0:23:59.130,0:24:10.920
+also already open I was not able to
+
+0:24:04.710,0:24:13.800
+resist to open this one they do not look
+
+0:24:10.920,0:24:17.960
+like spectacular but I think they are
+
+0:24:13.800,0:24:23.010
+spectacular and I will show you why
+
+0:24:17.960,0:24:27.360
+these are in one hand LEDs and on the
+
+0:24:23.010,0:24:31.620
+other hand they are touch sensors very
+
+0:24:27.360,0:24:37.980
+nice new sort of devices in different
+
+0:24:31.620,0:24:39.210
+colors these two here come from banggood
+
+0:24:37.980,0:24:41.820
+and the bank
+
+0:24:39.210,0:24:45.090
+it now every time I order something I
+
+0:24:41.820,0:24:48.510
+get these stickers here I have no clue
+
+0:24:45.090,0:24:51.390
+where I should stick them on but anyway
+
+0:24:48.510,0:24:54.149
+this is the more important thing these
+
+0:24:51.390,0:24:58.440
+are two sorts of microphones USB
+
+0:24:54.149,0:25:03.600
+microphones for my Raspberry Pi because
+
+0:24:58.440,0:25:10.100
+I want also to start to experiment with
+
+0:25:03.600,0:25:10.100
+voice on the Raspberry Pi next one I
+
+0:25:10.850,0:25:23.640
+think I know what this is this is the
+
+0:25:14.220,0:25:29.669
+awaited face for these X shields you see
+
+0:25:23.640,0:25:34.080
+here you can put here one of the board's
+
+0:25:29.669,0:25:37.350
+we saw before like that I think it has
+
+0:25:34.080,0:25:43.760
+to do with this one because it looks
+
+0:25:37.350,0:25:46.770
+like it fits at least from a only
+
+0:25:43.760,0:25:52.470
+mechanical point of view and it fits
+
+0:25:46.770,0:25:57.720
+also somehow with these ports here and
+
+0:25:52.470,0:26:00.720
+with the ESP 32 and also with this
+
+0:25:57.720,0:26:03.600
+prototype port but I think I do not
+
+0:26:00.720,0:26:07.309
+understand completely how it works but
+
+0:26:03.600,0:26:10.409
+maybe I figure it out till I make my
+
+0:26:07.309,0:26:13.049
+video about the different boards here
+
+0:26:10.409,0:26:16.770
+and by the way I just discovered that
+
+0:26:13.049,0:26:19.470
+they solved the issue I had with the
+
+0:26:16.770,0:26:22.350
+shield with the way most shield you have
+
+0:26:19.470,0:26:25.260
+switches here you can select on which
+
+0:26:22.350,0:26:28.500
+pin you want to have your pixels here I
+
+0:26:25.260,0:26:30.750
+think that is a good idea because with
+
+0:26:28.500,0:26:32.840
+the way most shields it was fixed next
+
+0:26:30.750,0:26:42.270
+one
+
+0:26:32.840,0:26:47.840
+again works for my Renu here another
+
+0:26:42.270,0:26:54.270
+port with a battery compartment and an
+
+0:26:47.840,0:26:57.480
+esp8266 so this is a similar concept
+
+0:26:54.270,0:27:01.590
+that this one but this is with the 32
+
+0:26:57.480,0:27:04.679
+and this is where the 82 66 here we have
+
+0:27:01.590,0:27:07.290
+all the pins for the ESP and here we
+
+0:27:04.679,0:27:16.620
+have much more pins for the ESP 32 and
+
+0:27:07.290,0:27:21.390
+this one here has also a battery but it
+
+0:27:16.620,0:27:24.450
+this is only charging so this is just
+
+0:27:21.390,0:27:31.500
+the power supply and the last one in
+
+0:27:24.450,0:27:35.070
+this package is again an X port also
+
+0:27:31.500,0:27:38.760
+with this nice looking dip switch here
+
+0:27:35.070,0:27:48.470
+and a buzzer just about it and it's
+
+0:27:38.760,0:27:48.470
+called X buzzer next one towards
+
+0:27:52.520,0:28:06.260
+our gesture sensors and they seem to
+
+0:27:59.870,0:28:09.410
+have two holes here one is I think LED
+
+0:28:06.260,0:28:14.000
+sender and the other one is a receiver
+
+0:28:09.410,0:28:18.460
+and they should be able to detect some
+
+0:28:14.000,0:28:22.370
+gestures we will see I do not have any
+
+0:28:18.460,0:28:26.420
+plans for them it's just I thought this
+
+0:28:22.370,0:28:27.940
+is an interesting board and maybe I just
+
+0:28:26.420,0:28:31.010
+play around a little bit
+
+0:28:27.940,0:28:32.060
+finally we reached the end of this huge
+
+0:28:31.010,0:28:34.790
+mailbag
+
+0:28:32.060,0:28:37.700
+it was probably the longest episode of
+
+0:28:34.790,0:28:40.510
+this channel please comment if you were
+
+0:28:37.700,0:28:43.700
+hard enough and persevered till here I
+
+0:28:40.510,0:28:47.120
+hope this episode was useful or at least
+
+0:28:43.700,0:28:50.110
+interesting for you if true then like
+
+0:28:47.120,0:28:50.110
+bye
+
