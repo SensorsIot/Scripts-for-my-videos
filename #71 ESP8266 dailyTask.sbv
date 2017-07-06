@@ -1,0 +1,446 @@
+0:00:00.450,0:00:02.470
+Grüezi YouTubers.
+
+0:00:02.470,0:00:06.140
+Here is the guy with the Swiss accent again.
+
+0:00:06.140,0:00:12.929
+In episode #58 we built a sensor which is
+capable to use the deepsleep functionality
+
+0:00:12.929,0:00:22.500
+of the ESP8266, in episode #60 we were able
+to store values in the RTC memory, and in
+
+0:00:22.500,0:00:29.130
+episode #67 we were able to get exact time
+from an NTP server.
+
+0:00:29.130,0:00:35.850
+Today, we will combine these three features
+and create a sensor which samples a value
+
+0:00:35.850,0:00:39.660
+every day exactly on the same minute.
+
+0:00:39.660,0:00:43.760
+But first a remark to the NTP service.
+
+0:00:43.760,0:00:50.220
+One of my viewers pointed me to two functions
+which are natively implemented in the ESP
+
+0:00:50.220,0:00:55.320
+SDK:
+The implementation of the SNTP protocol, a
+
+0:00:55.320,0:01:02.390
+simple version of the NTP protocol, and the
+time() function, which reads the internal
+
+0:01:02.390,0:01:06.469
+ESP time based on the RTC timer.
+
+0:01:06.469,0:01:12.259
+These two functions have some advantages:
+First, they are already implemented in the
+
+0:01:12.259,0:01:19.880
+SDK and second, the time() function gets the
+actual time without connecting to the internet
+
+0:01:19.880,0:01:21.389
+every time.
+
+0:01:21.389,0:01:27.820
+Because we know, that the ESP needs a lot
+of energy and also time for internet access,
+
+0:01:27.820,0:01:30.750
+this is highly appreciated.
+
+0:01:30.750,0:01:35.149
+This does not mean, that the ESP has a realtime
+clock.
+
+0:01:35.149,0:01:42.740
+It jus means, that, after getting the time
+once from an NTP server, we can use the internal
+
+0:01:42.740,0:01:43.759
+clock.
+
+0:01:43.759,0:01:48.899
+But keep in mind, the internal timer is not
+completely precise.
+
+0:01:48.899,0:01:54.639
+I show you an example:
+I read the time, wait for 10 seconds, and
+
+0:01:54.639,0:01:56.250
+read the time again.
+
+0:01:56.250,0:02:00.549
+We should see exactly the same number at the
+last place.
+
+0:02:00.549,0:02:02.799
+This works for nearly an hour.
+
+0:02:02.799,0:02:06.079
+But then, we start to see differences.
+
+0:02:06.079,0:02:12.069
+This difference depends on the individual
+chip and probably also on ambient temperature
+
+0:02:12.069,0:02:13.069
+etc.
+
+0:02:13.069,0:02:20.080
+So, you can use this internal time for your
+projects if you can live with a slight drift.
+
+0:02:20.080,0:02:25.420
+Keep in mind, that this time does not survive
+the deepsleep as we see here.
+
+0:02:25.420,0:02:34.519
+After deepsleep, the time is always 0 UNIX
+time (which is 1st of January 1970).
+
+0:02:34.519,0:02:40.000
+But all-in-all, this is a very handy function
+if you just need the time.
+
+0:02:40.000,0:02:44.329
+To make it easy for you, again, I wrote a
+small library.
+
+0:02:44.329,0:02:48.180
+This time, it has two different parts:
+1.
+
+0:02:48.180,0:02:54.260
+Set the internal time with the call setSNTPtime())
+2.
+
+0:02:54.260,0:02:57.459
+Read the time with the method getTime().
+
+0:02:57.459,0:03:04.569
+You need the settime method only at the beginning,
+probably in setup, and, if you want to run
+
+0:03:04.569,0:03:09.120
+your sketch over a long time, also after a
+day or so.
+
+0:03:09.120,0:03:15.810
+The timezone and the summertime adjustments
+are the same as in the NTPtimeESP library.
+
+0:03:15.810,0:03:22.720
+I just changed the timezone variable to “double”
+format for my Indian viewers.
+
+0:03:22.720,0:03:27.480
+India’s time zone differs 30 minutes and
+not a full hour.
+
+0:03:27.480,0:03:32.829
+But let’s now continue with our task to
+build a sensor which reads the value every
+
+0:03:32.829,0:03:34.189
+day once.
+
+0:03:34.189,0:03:40.049
+I got the idea of creating this library from
+HarringayMakerSpace.
+
+0:03:40.049,0:03:43.390
+You find a link to their library in the description.
+
+0:03:43.390,0:03:46.090
+The library is easy to use.
+
+0:03:46.090,0:03:50.829
+I show you the usage with the help of the
+included example file:
+
+0:03:50.829,0:03:59.749
+As always, we include the library and create
+the object ESPDailyTaskNTP dailyTask().
+
+0:03:59.749,0:04:04.859
+The first two parameters define the hour and
+the minute of the planned task.
+
+0:04:04.859,0:04:10.700
+The next two readings are the credentials
+of your Wi-Fi and the last parameter defines
+
+0:04:10.700,0:04:12.560
+the reset pin.
+
+0:04:12.560,0:04:17.490
+If you ground this pin, the timer is reset
+and starts from scratch.
+
+0:04:17.490,0:04:20.400
+The reset pin parameter is optional.
+
+0:04:20.400,0:04:25.510
+You do not need it if you can accept that
+the first daily task does not start at the
+
+0:04:25.510,0:04:27.270
+exact time.
+
+0:04:27.270,0:04:34.690
+The setup is very simple: If you want to get
+the debug messages, you start the serial connection.
+
+0:04:34.690,0:04:42.240
+Otherwise you just need three parts:
+The first line, dailyTask.sleepOneDay(); checks
+
+0:04:42.240,0:04:46.240
+if the time to execute the task has arrived.
+
+0:04:46.240,0:04:51.460
+If not, it sends the ESP straight to deepsleep
+again.
+
+0:04:51.460,0:04:58.790
+Normally, this function does even not switch
+the Wi-Fi on and takes just a few milliseconds.
+
+0:04:58.790,0:05:03.870
+If it is time to execute the daily task, the
+next lines are called.
+
+0:05:03.870,0:05:06.860
+This is, where you place your coding.
+
+0:05:06.860,0:05:13.560
+To show you the working of the sketch I read
+here the actual NTP time and display it in
+
+0:05:13.560,0:05:15.130
+serial.
+
+0:05:15.130,0:05:19.650
+At the end, I post it to data.sparkfun.com.
+
+0:05:19.650,0:05:25.180
+If you run this sketch, it also will post
+it to sparkfun.
+
+0:05:25.180,0:05:30.620
+Please fill in your YouTube name and I will
+see who used the sketch.
+
+0:05:30.620,0:05:36.890
+Like that, we can check every day if the task
+was executed at the right time.
+
+0:05:36.890,0:05:42.040
+After this code, we have to send the ESP back
+to sleep again.
+
+0:05:42.040,0:05:43.040
+Done.
+
+0:05:43.040,0:05:49.650
+As usual, if you only want to use the library
+you can stop now and get a beer or so.
+
+0:05:49.650,0:05:54.270
+If you want to know, how this “miracle”
+is done, you can stay on.
+
+0:05:54.270,0:05:57.330
+Again, we now go to the library.
+
+0:05:57.330,0:06:01.900
+The function sleeponeday is the central part
+of it.
+
+0:06:01.900,0:06:09.810
+As usual, I programmed it as a state machine:
+The states of this machine are: RESET, COUNTING,
+
+0:06:09.810,0:06:12.210
+CHECK, and WORK.
+
+0:06:12.210,0:06:19.220
+These states are all in one case statement
+and the status is stored in RTC memory to
+
+0:06:19.220,0:06:21.380
+survive the deep sleep.
+
+0:06:21.380,0:06:25.880
+Details about this function you find in episode
+#60.
+
+0:06:25.880,0:06:30.420
+Some other variables also survive in the RTC
+memory:
+
+0:06:30.420,0:06:34.370
+A marker flag which I set here to 85.
+
+0:06:34.370,0:06:41.130
+This flag is used to make sure, that the other
+variables in RTC memory originate from this
+
+0:06:41.130,0:06:44.170
+sketch and not another one.
+
+0:06:44.170,0:06:47.060
+You can use whatever marker you want.
+
+0:06:47.060,0:06:51.500
+Just make sure, that each of your sketches
+use a different one.
+
+0:06:51.500,0:06:55.700
+The second variable is a counter which counts
+the hours.
+
+0:06:55.700,0:07:01.770
+Unfortunately, the ESP8266 only can deepsleep
+for about one hour.
+
+0:07:01.770,0:07:04.350
+Then, it has to wake up.
+
+0:07:04.350,0:07:10.310
+This counter counts, how often the ESP has
+to wake-up till the 24 hours are through.
+
+0:07:10.310,0:07:18.540
+So, let’s look what happens if we call the
+method sleeponeday: First, the RTC memory
+
+0:07:18.540,0:07:20.210
+variables are read.
+
+0:07:20.210,0:07:23.860
+And second, we check if a reset is necessary.
+
+0:07:23.860,0:07:31.680
+A reset is necessary if the reset pin is low
+or if the marker is not found.
+
+0:07:31.680,0:07:40.300
+After that, the code switches to the right
+case, based on the status variable.
+
+0:07:40.300,0:07:49.520
+The reset just initializes the RTC variables
+and send the ESP to deep sleep for one microsecond.
+
+0:07:49.520,0:07:55.420
+It also defines, that the ESP has to wake-up
+with the Wi-Fi on.
+
+0:07:55.420,0:08:01.000
+After this microsecond the ESP wakes up with
+the status CHECK.
+
+0:08:01.000,0:08:07.090
+In the status CHECK we check the current time
+by calling the NTP server and compare it with
+
+0:08:07.090,0:08:10.020
+the time defined for the recurring task.
+
+0:08:10.020,0:08:15.970
+If this difference is shorter than one hour,
+the ESP can sleep for this time and wake up
+
+0:08:15.970,0:08:19.120
+directly in the status WORK.
+
+0:08:19.120,0:08:27.270
+This is possible, because we saw before, that
+the RTC is exact enough to count one hour.
+
+0:08:27.270,0:08:33.050
+In the status WORK the only thing we do is,
+not to go to sleep.
+
+0:08:33.050,0:08:39.909
+If we do not go to sleep, we go on in our
+sketch and execute the daily task.
+
+0:08:39.909,0:08:44.090
+After this task, we call the method backtosleep().
+
+0:08:44.090,0:08:48.830
+After our daily task, we know that we have
+to wait 24 hours.
+
+0:08:48.830,0:08:54.880
+This is, why we can sleep for one hour and
+set the counter to 23.
+
+0:08:54.880,0:09:02.020
+During the next wake-up we just need to go
+to the COUNTING status and do not need Wi-Fi.
+
+0:09:02.020,0:09:08.130
+The status COUNTING finally checks, if we
+are close to the time for the next daily task.
+
+0:09:08.130,0:09:14.970
+If so, it sets the status CHECK to make sure
+we call the NTP time and set the needed sleep
+
+0:09:14.970,0:09:18.560
+time to wake-up at exactly the right time.
+
+0:09:18.560,0:09:21.680
+And then, the whole story starts over.
+
+0:09:21.680,0:09:22.740
+Simple.
+
+0:09:22.740,0:09:28.480
+The only thing we have to do is, to shorten
+the time for one hour a bit that we are for
+
+0:09:28.480,0:09:32.220
+sure a little before the exact time.
+
+0:09:32.220,0:09:37.400
+If you are familiar with the Swiss Railway
+clocks you know this principle.
+
+0:09:37.400,0:09:43.040
+The seconds hands run a little faster and
+waits one second before the minute till the
+
+0:09:43.040,0:09:47.130
+exact pulse arrives from a central master
+clock.
+
+0:09:47.130,0:09:52.520
+This made it possible in early days to have
+exact time in all Swiss cities.
+
+0:09:52.520,0:09:56.620
+And maybe, this is the basis for the famous
+Swiss precision…
+
+0:09:56.620,0:09:58.970
+I hope, this episode was useful or at least
+interesting for you.
+
+0:09:58.970,0:09:59.470
+Bye
